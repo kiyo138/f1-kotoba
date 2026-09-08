@@ -230,19 +230,31 @@ a.plate{ text-decoration:none; }
 a.plate:hover{ border-color:var(--rule-strong); }
 .fig-hero{ margin-top:8px; }
 
+/* 図の説明文＋拡大の案内。
+   図が読めない画面のための代替本文なので、本文より一段弱く、かつ図にぶら下げて見せる。
+   縦罫は画像の縁 --plate-rim と同色。画像の枠が下へ続いているように見せるため。 */
 figcaption{
   margin-top:12px;
-  font-size:1rem;             /* 16px */
-  line-height:1.75;
-  color:var(--sub);
+  max-width:34rem;                /* 544px。広い画面で1行32字前後に抑える */
+  padding-inline-start:12px;
+  border-inline-start:2px solid var(--plate-rim);
+  font-size:1rem;                 /* 16px。本文は17/18pxなので必ず一段小さい */
+  line-height:1.75;               /* 本文1.9より詰める。図の一部としてひと塊に見せる */
+  color:var(--sub);               /* #5A5D64 / 暗色時 #A8ABB1 */
+  text-align:start;
+  text-wrap:balance;              /* 折り返した行の長さを揃える。非対応環境では無視される */
 }
+@media (min-width:600px){
+  figcaption{ margin-top:16px; }
+}
+
+/* 案内文はキャプションと同じ段落の中に続けて置く（別行に立てない） */
 .cap-hint{
-  display:block;
-  margin-top:4px;
-  font-size:.9375rem;
-  color:var(--sub);
+  margin-inline-start:.5em;       /* キャプション文との間 8px */
+  font-size:.9375rem;             /* 15px */
 }
 .cap-hint::before{ content:"⤢ "; }
+.cap-hint:only-child{ margin-inline-start:0; }   /* キャプション未記入の回 */
 
 /* --- 8. 次回予告（控えめに） ------------------------------ */
 .next-up{
@@ -372,7 +384,7 @@ figcaption{
         <a class="plate" href="f1-02-tyres.png">
           <img src="f1-02-tyres.png" width="1600" height="1040" loading="lazy" alt="スリック・インターミディエイト・フルウェットの3種類のタイヤの溝と色の比較図">
         </a>
-        <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+        <figcaption><span class="cap-text">3種類を左から並べ、溝が深いタイヤほど多くの水をかき出すことを示しています。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
       </figure>
       <h2>溝は、水をかき出すためにある</h2>
       <p>第1回で「乾いた路面では溝がないほうが速い」と書きました。ゴムが路面に触れる面積が広いほど、よく食いつくからです。</p>
@@ -389,7 +401,7 @@ figcaption{
         <a class="plate" href="f1-02-range.png">
           <img src="f1-02-range.png" width="1600" height="760" loading="lazy" alt="路面の乾き具合に応じたタイヤの使い分け範囲と、履き替えの目安を示した図">
         </a>
-        <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+        <figcaption><span class="cap-text">乾きから大雨までを1本の帯にすると、真ん中の広い範囲をインターが受け持ちます。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
       </figure>
       <h2>実は、主役が交代している</h2>
       <p>ここが面白いところで、大雨用のフルウェットは近年ほとんど使われていません。</p>

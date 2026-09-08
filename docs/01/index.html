@@ -230,19 +230,31 @@ a.plate{ text-decoration:none; }
 a.plate:hover{ border-color:var(--rule-strong); }
 .fig-hero{ margin-top:8px; }
 
+/* 図の説明文＋拡大の案内。
+   図が読めない画面のための代替本文なので、本文より一段弱く、かつ図にぶら下げて見せる。
+   縦罫は画像の縁 --plate-rim と同色。画像の枠が下へ続いているように見せるため。 */
 figcaption{
   margin-top:12px;
-  font-size:1rem;             /* 16px */
-  line-height:1.75;
-  color:var(--sub);
+  max-width:34rem;                /* 544px。広い画面で1行32字前後に抑える */
+  padding-inline-start:12px;
+  border-inline-start:2px solid var(--plate-rim);
+  font-size:1rem;                 /* 16px。本文は17/18pxなので必ず一段小さい */
+  line-height:1.75;               /* 本文1.9より詰める。図の一部としてひと塊に見せる */
+  color:var(--sub);               /* #5A5D64 / 暗色時 #A8ABB1 */
+  text-align:start;
+  text-wrap:balance;              /* 折り返した行の長さを揃える。非対応環境では無視される */
 }
+@media (min-width:600px){
+  figcaption{ margin-top:16px; }
+}
+
+/* 案内文はキャプションと同じ段落の中に続けて置く（別行に立てない） */
 .cap-hint{
-  display:block;
-  margin-top:4px;
-  font-size:.9375rem;
-  color:var(--sub);
+  margin-inline-start:.5em;       /* キャプション文との間 8px */
+  font-size:.9375rem;             /* 15px */
 }
 .cap-hint::before{ content:"⤢ "; }
+.cap-hint:only-child{ margin-inline-start:0; }   /* キャプション未記入の回 */
 
 /* --- 8. 次回予告（控えめに） ------------------------------ */
 .next-up{
@@ -368,7 +380,7 @@ figcaption{
         <a class="plate" href="f1-01-diagram.png">
           <img src="f1-01-diagram.png" width="1600" height="1173" loading="lazy" alt="カーブでハンドルを切ってもマシンが外側へ流れていくアンダーステアの図解">
         </a>
-        <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+        <figcaption><span class="cap-text">同じカーブに2本の走行線を重ね、内側を通る線と外へふくらむ線を比べています。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
       </figure>
       <h2>なぜ起きるのか</h2>
       <p>原因はシンプルで、前のタイヤのグリップが足りていないから。</p>
@@ -388,9 +400,9 @@ figcaption{
       <p>ただし前を強めすぎると、今度はオーバーステア寄りになる。どちらにも振り切らない一点を探す作業になります。この折り合いを、F1では「バランス」と呼びます。</p>
       <figure class="fig">
         <a class="plate" href="f1-01-parts.png">
-          <img src="f1-01-parts.png" width="1600" height="953" loading="lazy" alt="アンダーステアの調整箇所（ブレーキ配分ダイヤル、フロントウイング角度、タイヤ空気圧）を示した図">
+          <img src="f1-01-parts.png" width="1600" height="953" loading="lazy" alt="F1マシンを横から見て、ノーズ・ハロー・エアボックス・リアウイング・フロントウイング・タイヤ・サイドポッドの位置を示した図">
         </a>
-        <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+        <figcaption><span class="cap-text">マシンを横から見て、ノーズやサイドポッドなど各部の名前と位置を示しています。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
       </figure>
       <h2>中継での見つけ方</h2>
       <p>オンボードカメラ（ドライバー視点の映像）で、ハンドルを切っているのに景色が正面から動かない瞬間。あれがアンダーステアです。</p>

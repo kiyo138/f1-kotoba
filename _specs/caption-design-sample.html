@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>図版キャプションの意匠 見本｜F1のことば、あいうえお</title>
+<style>
+/* ============================================================
+   本番CSS（build.py）からの抜粋。図版キャプションを見るのに必要な分だけ。
+   「◆ 新規／変更」と書いた箇所だけが今回の提案。それ以外は現行のまま。
+   ============================================================ */
+
+/* --- 1. トークン ------------------------------------------ */
+:root{
+  --bg:          #F6F5F2;
+  --ink:         #191B1F;
+  --sub:         #5A5D64;
+  --accent:      #D4342A;
+  --accent-text: #B32A21;
+  --rule:        #DDDAD3;
+  --rule-strong: #C6C2B9;
+  --panel:       #EDEBE5;
+  --card:        #FCFBF9;
+  --plate-rim:   #DDDAD3;
+  --img-filter:  none;
+
+  --measure: 41.5rem;      /* 664px */
+  --wide:    57.5rem;      /* 920px */
+  --pad:     1rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:          #15171A;
+    --ink:         #E9E7E2;
+    --sub:         #A8ABB1;
+    --accent:      #F2564A;
+    --accent-text: #F2564A;
+    --rule:        #2E3238;
+    --rule-strong: #3D424A;
+    --panel:       #1D2126;
+    --card:        #1B1E23;
+    --plate-rim:   #4A5058;
+    --img-filter:  brightness(.90);
+  }
+}
+
+/* --- 2. 下地 ---------------------------------------------- */
+*, *::before, *::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:
+    system-ui, -apple-system,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP",
+    "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", YuGothic,
+    "Meiryo", sans-serif;
+  font-size:1.0625rem;      /* 17px */
+  line-height:1.9;
+  letter-spacing:.03em;
+  line-break:strict;
+  text-rendering:optimizeLegibility;
+}
+@media (min-width:600px){
+  body{ font-size:1.125rem; }   /* 18px */
+  :root{ --pad:1.5rem; }
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
+
+/* --- 3. 桁組み -------------------------------------------- */
+.wrap{ max-width:var(--wide); margin-inline:auto; padding-inline:var(--pad); }
+.col { max-width:var(--measure); margin-inline:auto; }
+.prose > *      { max-width:var(--measure); margin-inline:auto; }
+.prose > figure { max-width:var(--wide); }
+
+.prose{ margin-top:8px; }
+.prose p{ margin:0 0 1.55em; }
+
+.prose h2{
+  margin:48px 0 18px;
+  font-size:1.3125rem;
+  line-height:1.55;
+  font-weight:700;
+  letter-spacing:.03em;
+  font-feature-settings:"palt" 1;
+}
+.prose h2::after{
+  content:"";
+  display:block;
+  width:72px; height:3px;
+  margin-top:10px;
+  background:var(--accent);
+}
+@media (min-width:600px){
+  .prose h2{ font-size:1.4375rem; margin-top:64px; }
+}
+
+/* --- 7. 図版 ---------------------------------------------- */
+.fig{ margin:36px auto; }
+@media (min-width:600px){ .fig{ margin:44px auto; } }
+
+.plate{
+  display:block;
+  border:1px solid var(--plate-rim);
+  border-radius:10px;
+  overflow:hidden;
+  background:#F6F5F2;
+  filter:var(--img-filter);
+}
+a.plate{ text-decoration:none; }
+a.plate:hover{ border-color:var(--rule-strong); }
+
+/* ◆ 新規／変更 ─────────────────────────────────────────────
+   図の説明文＋拡大の案内。
+   図が読めない画面のための代替本文なので、本文より一段弱く、かつ図にぶら下げて見せる。
+   縦罫は画像の縁 --plate-rim と同色。画像の枠が下へ続いているように見せるため。 */
+figcaption{
+  margin-top:12px;
+  max-width:34rem;                /* 544px。広い画面で1行32字前後に抑える */
+  padding-inline-start:12px;
+  border-inline-start:2px solid var(--plate-rim);
+  font-size:1rem;                 /* 16px。本文は17/18pxなので必ず一段小さい */
+  line-height:1.75;               /* 本文1.9より詰め、図の一部としてひと塊に見せる */
+  color:var(--sub);
+  text-align:start;
+  text-wrap:balance;              /* 折り返した行の長さを揃える。非対応環境では無視 */
+}
+@media (min-width:600px){
+  figcaption{ margin-top:16px; }
+}
+
+/* 案内文はキャプションと同じ段落の中に続けて置く（別行に立てない） */
+.cap-hint{
+  margin-inline-start:.5em;       /* キャプション文との間 8px */
+  font-size:.9375rem;             /* 15px */
+}
+.cap-hint::before{ content:"⤢ "; }
+.cap-hint:only-child{ margin-inline-start:0; }   /* キャプション未記入の回 */
+/* ◆ ここまで ──────────────────────────────────────────── */
+
+
+/* ============================================================
+   ここから下は見本専用の装置。本番テンプレートには含めない。
+   ============================================================ */
+.spec-zone{ margin:64px auto 80px; }
+.spec-zone h1{
+  margin:0 0 8px;
+  font-size:1.3125rem; line-height:1.5; font-weight:700;
+}
+.spec-note{
+  margin:0 0 24px;
+  padding:14px 16px;
+  background:var(--panel);
+  border-radius:8px;
+  font-size:.9375rem;
+  line-height:1.8;
+  color:var(--sub);
+}
+.spec-label{
+  display:block;
+  margin:40px 0 8px;
+  font-size:.875rem;
+  letter-spacing:.18em;
+  font-weight:700;
+  color:var(--accent-text);
+}
+.prose > .spec-label{ margin:40px auto 8px; }   /* .prose p の余白に負けないよう明示 */
+.spec-rule{ border:0; border-top:1px solid var(--rule); margin:56px 0 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="col">
+    <p class="spec-label" style="margin-top:40px;">意匠見本</p>
+    <h1 style="margin:0 0 8px; font-size:1.3125rem; line-height:1.5;">図版キャプションの見え方</h1>
+    <p class="spec-note">
+      仕様書は <code>_specs/caption-design.md</code>。文言はすべてダミー。<br>
+      本文の段落に挟んで並べてある。<strong>キャプションが本文の続きに見えないか</strong>、
+      <strong>図とキャプションが1つの塊に見えるか</strong>を、390px と 1280px の両方で見てほしい。
+    </p>
+  </div>
+
+  <div class="prose">
+
+    <p>ここは本文の段落です。文字サイズは17px（600px以上で18px）、行間1.9、色は <code>--ink</code>。
+      この段落と、下の図のキャプションが見分けられるかどうかが、この意匠の合否になります。</p>
+
+    <p class="spec-label col">A. キャプション有り（40字）</p>
+
+    <figure class="fig">
+      <a class="plate" href="../アンダーステア/f1-01-diagram.png">
+        <img src="../アンダーステア/f1-01-diagram.png" width="1600" height="1173" loading="lazy"
+             alt="図：カーブでハンドルを切ってもマシンが外側へ流れていくアンダーステアの図解。">
+      </a>
+      <figcaption><span class="cap-text">ハンドルを切っても前のタイヤが滑り、マシンは外側へふくらんでいきます。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+    </figure>
+
+    <p>図とキャプションの間は12px、キャプションと次の本文の間は36px。この1対3の比だけで、
+      キャプションがどちらに属しているかが読めます。左の縦罫は画像の縁と同じ色です。</p>
+
+    <p class="spec-label col">B. キャプション無し（未記入の回）</p>
+
+    <figure class="fig">
+      <a class="plate" href="../アンダーステア/f1-01-parts.png">
+        <img src="../アンダーステア/f1-01-parts.png" width="1600" height="953" loading="lazy"
+             alt="図：アンダーステアの調整箇所（ブレーキ配分ダイヤル、フロントウイング角度、タイヤ空気圧）を示した図。">
+      </a>
+      <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+    </figure>
+
+    <p>キャプションが無い回は、案内文だけが1行出ます。<code>span.cap-text</code> を出力しないだけで、
+      現行のビルド出力とまったく同じHTMLです。行頭の字下げは <code>:only-child</code> で消しています。</p>
+
+  </div>
+
+  <hr class="spec-rule">
+
+  <div class="col spec-zone">
+    <p class="spec-label" style="margin-top:0;">文字数による折り返しの比較</p>
+    <p class="spec-note">
+      画像を省き、キャプションだけを並べたもの。想定は40字前後だが、短い場合・長い場合に
+      どう折り返すかを見るための欄。<strong>見本専用で、本番には出さない。</strong>
+    </p>
+
+    <p class="spec-label">25字</p>
+    <figure class="fig" style="margin:0 0 32px;">
+      <figcaption><span class="cap-text">前のタイヤが滑ると、マシンは外へふくらみます。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+    </figure>
+
+    <p class="spec-label">40字（想定）</p>
+    <figure class="fig" style="margin:0 0 32px;">
+      <figcaption><span class="cap-text">ハンドルを切っても前のタイヤが滑り、マシンは外側へふくらんでいきます。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+    </figure>
+
+    <p class="spec-label">60字（長すぎる例）</p>
+    <figure class="fig" style="margin:0 0 32px;">
+      <figcaption><span class="cap-text">ハンドルを切っても前のタイヤがグリップを失って滑り、マシンはドライバーの向けたい向きより外側へ、ゆっくりとふくらんでいきます。</span><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+    </figure>
+
+    <p class="spec-label">案内文のみ</p>
+    <figure class="fig" style="margin:0 0 32px;">
+      <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+    </figure>
+
+    <p class="spec-note" style="margin-top:32px;">
+      60字は390pxで3行になり、案内文を入れると4行に届く。<code>text-wrap:balance</code> の効きも
+      4行前後で頭打ちになるため、<strong>文言は40字前後を上限の目安</strong>としたい（文言側への申し送り）。
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

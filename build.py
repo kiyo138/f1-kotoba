@@ -32,16 +32,18 @@ DOCS = ROOT / "docs"
 #   "NN": (
 #       "フォルダ名",
 #       [
-#           ("画像サフィックス", アンカー見出し文字列 or None, "altテキスト" or None),
+#           ("画像サフィックス", アンカー見出し文字列 or None, "altテキスト" or None, "キャプション"),
 #           ...
 #       ],
 #   )
 #
 # アンカー: None は冒頭（hero）、文字列はその ■ 見出しの節末に挿入する。
 # alt: サフィックスが "hero" のときのみ None を許す（自動生成される）。
+# キャプション（4要素目）: 省略可。本文中の図版（hero以外）の下に出す一文。
+#   未指定・None・空白のみ、または省略時（3要素タプル）は「キャプションなし」として扱う。
 # ------------------------------------------------------------
 
-COLUMNS: dict[str, tuple[str, list[tuple[str, str | None, str | None]]]] = {
+COLUMNS: dict[str, tuple[str, list[tuple]]] = {
     "01": (
         "アンダーステア",
         [
@@ -50,11 +52,13 @@ COLUMNS: dict[str, tuple[str, list[tuple[str, str | None, str | None]]]] = {
                 "diagram",
                 "曲がりたいのに、曲がってくれない",
                 "カーブでハンドルを切ってもマシンが外側へ流れていくアンダーステアの図解",
+                "同じカーブに2本の走行線を重ね、内側を通る線と外へふくらむ線を比べています。",
             ),
             (
                 "parts",
                 "どう直すのか",
-                "アンダーステアの調整箇所（ブレーキ配分ダイヤル、フロントウイング角度、タイヤ空気圧）を示した図",
+                "F1マシンを横から見て、ノーズ・ハロー・エアボックス・リアウイング・フロントウイング・タイヤ・サイドポッドの位置を示した図",
+                "マシンを横から見て、ノーズやサイドポッドなど各部の名前と位置を示しています。",
             ),
         ],
     ),
@@ -66,11 +70,13 @@ COLUMNS: dict[str, tuple[str, list[tuple[str, str | None, str | None]]]] = {
                 "tyres",
                 "雨と晴れの、あいだ",
                 "スリック・インターミディエイト・フルウェットの3種類のタイヤの溝と色の比較図",
+                "3種類を左から並べ、溝が深いタイヤほど多くの水をかき出すことを示しています。",
             ),
             (
                 "range",
                 "履き替えるタイミングが勝負",
                 "路面の乾き具合に応じたタイヤの使い分け範囲と、履き替えの目安を示した図",
+                "乾きから大雨までを1本の帯にすると、真ん中の広い範囲をインターが受け持ちます。",
             ),
         ],
     ),
@@ -82,11 +88,13 @@ COLUMNS: dict[str, tuple[str, list[tuple[str, str | None, str | None]]]] = {
                 "wing",
                 "飛行機の翼を、さかさまにする",
                 "飛行機の翼を上下さかさまにするとダウンフォースが生まれることを示した図",
+                "同じ形の翼を左右に並べ、上へ働く力と下へ働く力を見比べています。",
             ),
             (
                 "mode",
                 "2026年、ウイングが動きはじめた",
                 "コーナーモードとストレートモードでフラップの開閉が切り替わるアクティブエアロの図",
+                "フラップが閉じる・開く・また閉じる流れを、左から順に3つ並べています。",
             ),
         ],
     ),
@@ -215,7 +223,7 @@ def extract_header(lines: list[str], nn: str) -> tuple[int, str, str, str]:
     return end + 1, round_str, kana, word
 
 
-Node = tuple  # ("h2", text) | ("p", text) | ("ul", [items]) | ("img", suffix, alt)
+Node = tuple  # ("h2", text) | ("p", text) | ("ul", [items]) | ("img", suffix, alt, caption)
 
 
 def parse_body(lines: list[str]) -> tuple[list[str], list[Node]]:
@@ -309,10 +317,30 @@ def build_description(first_paragraph: str) -> str:
 
 
 def process_round(
-    nn: str, folder_name: str, images: list[tuple[str, str | None, str | None]]
+    nn: str, folder_name: str, images_raw: list[tuple]
 ) -> tuple[dict | None, list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
+
+    # --- 画像エントリの正規化（3要素・4要素のどちらも4要素に揃える） -------
+    images: list[tuple[str, str | None, str | None, str | None]] = []
+    for entry in images_raw:
+        if len(entry) == 3:
+            suf, anchor, alt = entry
+            caption = None
+        elif len(entry) == 4:
+            suf, anchor, alt, caption = entry
+        else:
+            errors.append(f"第{nn}回: COLUMNS のエントリの要素数が不正です（{entry!r}）")
+            continue
+        if caption is not None and not isinstance(caption, str):
+            errors.append(
+                f"第{nn}回: {IMG_FILENAME_TMPL.format(nn=nn, suffix=suf)} のキャプションが文字列ではありません"
+            )
+            continue
+        images.append((suf, anchor, alt, caption))
+    if errors:
+        return None, errors, warnings
 
     folder = ROOT / folder_name
     if not folder.is_dir():
@@ -344,7 +372,7 @@ def process_round(
     headings = [text for (t, text) in flow if t == "h2"]
 
     # --- 画像の突き合わせ ---------------------------------------
-    declared_names = {IMG_FILENAME_TMPL.format(nn=nn, suffix=suf) for suf, _, _ in images}
+    declared_names = {IMG_FILENAME_TMPL.format(nn=nn, suffix=suf) for suf, *_rest in images}
     actual_names = {p.name for p in folder.glob(f"f1-{nn}-*.png")}
     missing = declared_names - actual_names
     for name in sorted(missing):
@@ -355,7 +383,7 @@ def process_round(
             f"第{nn}回: フォルダ内にCOLUMNSに載っていないPNGがあります: {', '.join(sorted(extra))}"
         )
 
-    for suf, anchor, alt in images:
+    for suf, anchor, alt, caption in images:
         if suf != "hero" and (alt is None or alt.strip() == ""):
             errors.append(
                 f"第{nn}回: {IMG_FILENAME_TMPL.format(nn=nn, suffix=suf)} のaltが空です"
@@ -368,10 +396,30 @@ def process_round(
                     f"第{nn}回: アンカー見出し「{anchor}」が本文中に{count}回出現しました"
                     f"（1回である必要があります）。実際の見出し一覧: {heading_list}"
                 )
+        caption_stripped = caption.strip() if caption else ""
+        if suf == "hero":
+            if caption_stripped:
+                warnings.append(
+                    f"第{nn}回: hero にキャプションは出力されません（無視します）"
+                )
+        else:
+            if caption_stripped:
+                if len(caption_stripped) >= 41:
+                    warnings.append(
+                        f"第{nn}回: {IMG_FILENAME_TMPL.format(nn=nn, suffix=suf)} のキャプションが"
+                        f"{len(caption_stripped)}字あります（40字以内を推奨）"
+                    )
+                if caption_stripped.count("。") >= 2 or (
+                    "。" in caption_stripped[:-1]
+                ):
+                    warnings.append(
+                        f"第{nn}回: {IMG_FILENAME_TMPL.format(nn=nn, suffix=suf)} のキャプションが"
+                        "二文になっています（一文にしてください）"
+                    )
 
     # PNGサイズの読み取り（存在するものだけ）
     dims: dict[str, tuple[int, int]] = {}
-    for suf, _, _ in images:
+    for suf, *_rest in images:
         name = IMG_FILENAME_TMPL.format(nn=nn, suffix=suf)
         path = folder / name
         if not path.exists():
@@ -390,13 +438,13 @@ def process_round(
     insertions: dict[int, list[Node]] = {}
     hero_alt = None
     hero_dims = dims.get("hero")
-    for suf, anchor, alt in images:
+    for suf, anchor, alt, caption in images:
         if suf == "hero":
             hero_alt = alt if alt else f"{title_full} のアイキャッチ画像"
             continue
         heading_index = headings_index_of(flow, anchor)
         pos = section_end_index(flow, heading_index)
-        insertions.setdefault(pos, []).append(("img", suf, alt))
+        insertions.setdefault(pos, []).append(("img", suf, alt, caption))
 
     final_flow: list[Node] = []
     for i, node in enumerate(flow):
@@ -660,19 +708,31 @@ a.plate{ text-decoration:none; }
 a.plate:hover{ border-color:var(--rule-strong); }
 .fig-hero{ margin-top:8px; }
 
+/* 図の説明文＋拡大の案内。
+   図が読めない画面のための代替本文なので、本文より一段弱く、かつ図にぶら下げて見せる。
+   縦罫は画像の縁 --plate-rim と同色。画像の枠が下へ続いているように見せるため。 */
 figcaption{
   margin-top:12px;
-  font-size:1rem;             /* 16px */
-  line-height:1.75;
-  color:var(--sub);
+  max-width:34rem;                /* 544px。広い画面で1行32字前後に抑える */
+  padding-inline-start:12px;
+  border-inline-start:2px solid var(--plate-rim);
+  font-size:1rem;                 /* 16px。本文は17/18pxなので必ず一段小さい */
+  line-height:1.75;               /* 本文1.9より詰める。図の一部としてひと塊に見せる */
+  color:var(--sub);               /* #5A5D64 / 暗色時 #A8ABB1 */
+  text-align:start;
+  text-wrap:balance;              /* 折り返した行の長さを揃える。非対応環境では無視される */
 }
+@media (min-width:600px){
+  figcaption{ margin-top:16px; }
+}
+
+/* 案内文はキャプションと同じ段落の中に続けて置く（別行に立てない） */
 .cap-hint{
-  display:block;
-  margin-top:4px;
-  font-size:.9375rem;
-  color:var(--sub);
+  margin-inline-start:.5em;       /* キャプション文との間 8px */
+  font-size:.9375rem;             /* 15px */
 }
 .cap-hint::before{ content:"⤢ "; }
+.cap-hint:only-child{ margin-inline-start:0; }   /* キャプション未記入の回 */
 
 /* --- 8. 次回予告（控えめに） ------------------------------ */
 .next-up{
@@ -893,16 +953,23 @@ def render_flow_node(node: Node, nn: str, dims: dict[str, tuple[int, int]]) -> s
         items = "".join(f"        <li>{esc(item)}</li>\n" for item in node[1])
         return f"      <ul>\n{items}      </ul>\n"
     if kind == "img":
-        _, suffix, alt = node
+        _, suffix, alt, caption = node
         w, h = dims[suffix]
         filename = IMG_FILENAME_TMPL.format(nn=nn, suffix=suffix)
+        caption_text = caption.strip() if caption else ""
+        if caption_text:
+            figcaption_inner = (
+                f"<span class=\"cap-text\">{esc(caption_text)}</span>"
+                f"<span class=\"cap-hint\">{esc(CAP_HINT_TEXT)}</span>"
+            )
+        else:
+            figcaption_inner = f"<span class=\"cap-hint\">{esc(CAP_HINT_TEXT)}</span>"
         return (
             "      <figure class=\"fig\">\n"
             f"        <a class=\"plate\" href=\"{filename}\">\n"
             f"          <img src=\"{filename}\" width=\"{w}\" height=\"{h}\" loading=\"lazy\" alt=\"{esc(alt)}\">\n"
             "        </a>\n"
-            "        <figcaption><span class=\"cap-hint\">"
-            f"{esc(CAP_HINT_TEXT)}</span></figcaption>\n"
+            f"        <figcaption>{figcaption_inner}</figcaption>\n"
             "      </figure>\n"
         )
     raise BuildError(f"未知のノード種別: {kind}")
@@ -1199,7 +1266,7 @@ def write_site(rounds_data: dict[str, dict]) -> None:
         out_dir = DOCS / nn
         out_dir.mkdir(parents=True, exist_ok=True)
 
-        for suf, _, _ in data["images"]:
+        for suf, *_rest in data["images"]:
             filename = IMG_FILENAME_TMPL.format(nn=nn, suffix=suf)
             src = data["folder"] / filename
             dst = out_dir / filename
