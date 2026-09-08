@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 780" width="1600" height="780" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">翼を、さかさまにする</title>
+  <desc id="desc">左に飛行機の翼の断面と上向きの揚力、右にそれを上下反転したF1のウイング断面と下向きのダウンフォース。断面の形は左右まったく同一で、向きだけが逆。右の下向きの矢印は、路面の上に置いた簡略化した車の車体を指している。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第3回 解説図1
+    「翼を、さかさまにする」 1600 x 780
+
+    ■ この図の主張
+      左右の断面は「まったく同じ形」でなければならない。
+      そのため path の d 属性は左右で完全に同一の文字列を使い、
+      右だけ transform に scale(1,-1) を足して上下反転している。
+      形を別々に描き起こしてはならない（図の主張そのものが崩れる）。
+
+    ■ 配色の役割分担（第3回 解説図の共通ルール）
+      #1B4FD8 コバルトブルー … F1側のもの／2026年の新しいものだけに使う
+      #5A5D64 グレー        … 飛行機側・気流・補助文字
+      #D4342A 赤            … 力の矢印と力のラベルだけ
+      #191B1F インク        … 主文字・路面・車体・タイヤ（車はopacityで後退させる）
+      #F6F5F2 背景
+
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ■ 影・ぼかしフィルタは使わない
+    ============================================================
+  -->
+
+  <defs>
+    <!-- 気流の矢印（全長280。右向き）。左右カラムで同じものを6回 use する -->
+    <!-- 翼断面の path は defs に置かず本体に2回直書きしている。
+         d 文字列を左右で一字一句そろえていることを目で確認できるようにするため。 -->
+    <g id="flowArrow">
+      <line x1="0" y1="0" x2="262" y2="0" stroke="#5A5D64" stroke-width="3"/>
+      <polygon points="258,-9 280,0 258,9" fill="#5A5D64"/>
+    </g>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="780" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">翼を、さかさまにする</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">同じ形を上下ひっくり返すと、浮かせる力が押しつける力に変わる。</text>
+
+  <!-- ============ 左右を分ける仕切り ============ -->
+  <line x1="800" y1="210" x2="800" y2="660" stroke="#5A5D64" stroke-opacity="0.25" stroke-width="1.5"/>
+
+  <!-- ================================================================
+       左カラム：飛行機の翼（カラム中心 x=440）
+       ================================================================ -->
+  <text x="440" y="240" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">飛行機の翼</text>
+
+  <!-- 気流（左から右へ3本） -->
+  <use href="#flowArrow" xlink:href="#flowArrow" transform="translate(140,345)"/>
+  <use href="#flowArrow" xlink:href="#flowArrow" transform="translate(140,425)"/>
+  <use href="#flowArrow" xlink:href="#flowArrow" transform="translate(140,505)"/>
+  <text x="280" y="575" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">空気の流れ</text>
+
+  <!-- 翼断面（上面がふくらんだ向き） -->
+  <path d="M 0,0 C 8,-22 44,-36 104,-35 C 172,-34 248,-19 300,-2 L 300,2 C 244,10 160,18 96,15 C 44,13 10,8 0,0 Z"
+        transform="translate(440,430)" fill="#5A5D64"/>
+
+  <!-- 揚力（上向き） -->
+  <line x1="590" y1="393" x2="590" y2="318" stroke="#D4342A" stroke-width="12"/>
+  <polygon points="574,320 606,320 590,296" fill="#D4342A"/>
+  <text x="530" y="302" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#D4342A">揚力　上へ持ち上げる</text>
+
+  <!-- 締めのキャプション（左カラムには地面を描かない＝空中） -->
+  <text x="440" y="700" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#191B1F">空へ浮くための翼</text>
+
+  <!-- ================================================================
+       右カラム：F1のウイング（カラム中心 x=1160）
+       ================================================================ -->
+  <text x="1160" y="240" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#1B4FD8">F1のウイング</text>
+
+  <!-- 気流（左から右へ3本。左カラムと同じ高さ・同じ長さ） -->
+  <use href="#flowArrow" xlink:href="#flowArrow" transform="translate(860,345)"/>
+  <use href="#flowArrow" xlink:href="#flowArrow" transform="translate(860,425)"/>
+  <use href="#flowArrow" xlink:href="#flowArrow" transform="translate(860,505)"/>
+
+  <!-- 翼断面：左カラムと完全に同一の d。scale(1,-1) で上下反転しているだけ -->
+  <path d="M 0,0 C 8,-22 44,-36 104,-35 C 172,-34 248,-19 300,-2 L 300,2 C 244,10 160,18 96,15 C 44,13 10,8 0,0 Z"
+        transform="translate(1160,430) scale(1,-1)" fill="#1B4FD8"/>
+
+  <!-- ダウンフォース（下向き）。
+       先端 (1310,593) は下の車体上面（x 1258–1372 が y=593 の平らな甲板）に接地する。
+       矢頭の高さ24・幅32は左カラムの揚力矢印と同じ寸法。 -->
+  <line x1="1310" y1="467" x2="1310" y2="569" stroke="#D4342A" stroke-width="12"/>
+  <polygon points="1294,569 1326,569 1310,593" fill="#D4342A"/>
+  <text x="1250" y="560" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#D4342A">ダウンフォース　下へ押しつける</text>
+
+  <!-- 路面（右カラムにだけ地面がある。左カラム＝空中との非対称は意図的） -->
+  <line x1="1110" y1="650" x2="1470" y2="650" stroke="#191B1F" stroke-width="4"/>
+
+  <!-- 簡略化した車（2026-09 改訂）
+       旧版はタイヤ2つの丸だけで、矢印が宙を指しているように見えた。
+       低い横長の車体を渡してタイヤとつなぎ、矢印の落ちる先を「路面の上の車」にした。
+       色は #191B1F のまま。ただし主役は翼断面（#1B4FD8）なので
+       グループごと opacity 0.65 に落として視覚的な優先度を下げている。
+       車体 y 593–614（高さ21）／タイヤ cy 624 r26（下端650＝路面に接地）
+       車体下端614 とタイヤ上端598 が16px重なるので、両者はつながって見える。 -->
+  <g opacity="0.65">
+    <path d="M 1176,606 C 1196,598 1228,594 1258,593 L 1372,593 C 1386,593 1394,600 1396,610 L 1396,614 L 1188,614 C 1180,614 1176,611 1176,606 Z" fill="#191B1F"/>
+    <circle cx="1240" cy="624" r="26" fill="#191B1F"/>
+    <circle cx="1360" cy="624" r="26" fill="#191B1F"/>
+    <circle cx="1240" cy="624" r="9" fill="#F6F5F2"/>
+    <circle cx="1360" cy="624" r="9" fill="#F6F5F2"/>
+  </g>
+
+  <text x="1160" y="700" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#191B1F">浮かないための翼</text>
+
+  <!-- ============ フッタ ============ -->
+  <text x="88" y="736" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第3回「う」　ウイング</text>
+</svg>

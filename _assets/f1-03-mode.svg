@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 770" width="1600" height="770" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">コーナーで閉じ、直線で開く</title>
+  <desc id="desc">コースの一区間を真上から見て左から右へ3ブロックに分けた図。1つ目は直角に曲がるコーナーでリアウイングのフラップが立って閉じ、2つ目はまっすぐな直線でフラップが寝て開き、3つ目はまた直角に曲がるコーナーでフラップが閉じる。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第3回 解説図2
+    「コーナーで閉じ、直線で開く」 1600 x 770
+
+    ■ 断面はリアウイングのみ。前後両方が動くことは図下部の赤注記2行で補う。
+    ■ フラップの角度差が図の主眼。閉＝rotate(-32) ／ 開＝rotate(-4)。
+      メインプレーン（下の板）は3ブロックとも rotate(-10) で固定。動くのはフラップだけ。
+
+    ■ 路面帯（2026-09 改訂）
+      旧版は3ブロックとも±8px傾いただけの帯で、コーナーと直線が区別できなかった。
+      改訂版は「真上から見たコースの一区間」として描き直している。
+        ブロック1：上から来て直角に右へ曲がるコーナー
+        ブロック2：完全に水平な直線（y=348 一定）
+        ブロック3：左から来て直角に上へ曲がるコーナー（ブロック1の左右鏡像）
+      帯は3ブロックとも stroke-width="50"、色は #DCDAD4 で共通。直線の高さ y=348 が
+      3ブロックで一致しているので、1本のコースが左から右へつながって読める。
+      センターラインの破線は背景色 #F6F5F2。帯を「道」と読ませ、曲がりを見せるための線。
+
+    ■ モード名の正式名称（2026-09 訂正）
+      Corner Mode ＝ コーナー用・高ダウンフォース（既定）。旧称 Z-mode。
+      Straight Mode ＝ 直線用・低抗力。旧称 X-mode。
+      旧称で書かれた資料が世に出回っているが、X ＝ 直線 ／ Z ＝ コーナー である。
+      読者が過去記事で旧称に出くわすことを想定し、灰色の注記1行を図の末尾に足した。
+
+    ■ 横位置の検算（モード名がとなりのラベルにぶつからないための計算）
+      モード名を font-size 28 → 25 に下げた（3ブロックとも同値）。理由は下記。
+      Yu Gothic Bold の想定送り幅：ラテン ≒ 0.62em（安全側。実測は 0.55em 前後）／和字 = 1.00em
+      ブロック1・3「Corner Mode　高ダウンフォース」
+        ラテン11字 11 × 25 × 0.62 = 170.5
+        和字空白1字 25 ／ 和字8字 8 × 25 = 200
+        合計 ≒ 395.5
+        ブロック1：140 + 395.5 = 535.5 → ブロック2の起点 590 まで 54.5px（規定20px以上）
+        ブロック3：1040 + 395.5 = 1435.5 → 上限 1560 まで 124.5px、右端 1600 まで 164.5px
+      ブロック2「Straight Mode　低抗力」
+        ラテン13字（間の半角空白含む） 13 × 25 × 0.62 = 201.5
+        和字空白1字 25 ／ 和字3字 75　合計 ≒ 301.5
+        590 + 301.5 = 891.5 → ブロック3の起点 1040 まで 148.5px
+      font-size 26 でも成立するが、ラテンを 0.68em と最悪側に見積もると
+      ブロック1の余白が 21.5px まで落ちるため、余裕を取って 25 を採った。
+
+    ■ 縦位置の根拠（文字と図形を噛ませないための計算）
+      モード名 font-size 25 / baseline 238 → 文字下端 ≒ 244
+      路面の最上点 267（＝ 292 − 50/2）… 文字下端との余白 23px（規定20px以上）
+      路面の最下点 373（＝ 348 + 50/2）
+      ウイング断面の最上点 389.3（＝ translate y 452 − 62.7）… 路面との余白 16.3px
+      ウイング断面の最下点 520 → キャプション baseline 550（cap top 528）
+      赤注記 594 / 630 は旧版のまま。
+      旧称注記（灰 22）baseline 676 … 赤注記下端 636 との余白 24px
+      フッタ baseline 730 … 旧称注記の下端 681 との余白 33px
+      画面高は 720 → 770 に拡張（フッタ下端 735 から下辺までの余白 35px。旧版の 40px に準ずる）。
+      背景 <rect> の height も 770 に合わせてある。
+
+    ■ 配色の役割分担
+      #1B4FD8 コバルトブルー … Straight Mode（開）と直線ブロックだけ
+      #191B1F インク        … Corner Mode（閉）とコーナーブロック
+      #D4342A 赤            … 注記文だけ
+      #DCDAD4 路面帯 ／ #5A5D64 補助文字 ／ #F6F5F2 背景
+    ■ 実在コース名は書かない。「ある一区間」以上の説明をしない。
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ============================================================
+  -->
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="770" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">コーナーで閉じ、直線で開く</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">2026年から、前と後ろのウイングのフラップが自分で形を変える。</text>
+
+  <!-- ================================================================
+       ブロック1：コーナー（x 140–560／中心 350）
+       路面は上から下りてきて、半径56で直角に右へ曲がり、y=348 で直線へ受け渡す。
+       ================================================================ -->
+  <text x="140" y="198" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#5A5D64">コーナー</text>
+  <text x="140" y="238" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="25" font-weight="700" fill="#191B1F">Corner Mode　高ダウンフォース</text>
+  <path d="M 180,292 C 180,323 205,348 236,348 L 560,348"
+        fill="none" stroke="#DCDAD4" stroke-width="50" stroke-linecap="butt"/>
+  <path d="M 180,292 C 180,323 205,348 236,348 L 560,348"
+        fill="none" stroke="#F6F5F2" stroke-width="4" stroke-dasharray="20 18"/>
+
+  <!-- リアウイング断面：フラップ閉（角度を立てる） -->
+  <g transform="translate(350,452)">
+    <rect x="-46" y="58" width="96" height="10" rx="5" fill="#191B1F" opacity="0.5"/>
+    <rect x="-10" y="26" width="14" height="34" rx="3" fill="#191B1F"/>
+    <rect x="-90" y="18" width="180" height="16" rx="8" fill="#191B1F" transform="rotate(-10 0 26)"/>
+    <rect x="-18" y="-32" width="120" height="14" rx="7" fill="#191B1F" transform="rotate(-32 42 -25)"/>
+  </g>
+  <text x="350" y="550" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#191B1F">フラップを閉じて、押しつけを最大に</text>
+
+  <!-- ブロック1→2 の矢印（断面の高さ 452 にそろえる） -->
+  <line x1="552" y1="452" x2="578" y2="452" stroke="#5A5D64" stroke-width="3"/>
+  <polygon points="576,443 596,452 576,461" fill="#5A5D64"/>
+
+  <!-- ================================================================
+       ブロック2：直線（x 590–1010／中心 800）
+       路面は完全に水平。y=348 はブロック1の出口・ブロック3の入口と同じ高さ。
+       ================================================================ -->
+  <text x="590" y="198" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#1B4FD8">直線</text>
+  <text x="590" y="238" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="25" font-weight="700" fill="#1B4FD8">Straight Mode　低抗力</text>
+  <path d="M 590,348 L 1010,348"
+        fill="none" stroke="#DCDAD4" stroke-width="50" stroke-linecap="butt"/>
+  <path d="M 590,348 L 1010,348"
+        fill="none" stroke="#F6F5F2" stroke-width="4" stroke-dasharray="20 18"/>
+
+  <!-- リアウイング断面：フラップ開（ほぼ水平。上の板が寝て隙間が開く） -->
+  <g transform="translate(800,452)">
+    <rect x="-46" y="58" width="96" height="10" rx="5" fill="#1B4FD8" opacity="0.5"/>
+    <rect x="-10" y="26" width="14" height="34" rx="3" fill="#1B4FD8"/>
+    <rect x="-90" y="18" width="180" height="16" rx="8" fill="#1B4FD8" transform="rotate(-10 0 26)"/>
+    <rect x="-18" y="-32" width="120" height="14" rx="7" fill="#1B4FD8" transform="rotate(-4 42 -25)"/>
+  </g>
+  <text x="800" y="550" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#191B1F">フラップを開いて、空気抵抗を減らす</text>
+
+  <!-- ブロック2→3 の矢印 -->
+  <line x1="1002" y1="452" x2="1028" y2="452" stroke="#5A5D64" stroke-width="3"/>
+  <polygon points="1026,443 1046,452 1026,461" fill="#5A5D64"/>
+
+  <!-- ================================================================
+       ブロック3：コーナー（x 1040–1460／中心 1250）
+       ブロック1の左右鏡像（x' = 1600 − x）。直線を受けて直角に上へ曲がる。
+       ================================================================ -->
+  <text x="1040" y="198" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#5A5D64">コーナー</text>
+  <text x="1040" y="238" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="25" font-weight="700" fill="#191B1F">Corner Mode　高ダウンフォース</text>
+  <path d="M 1040,348 L 1364,348 C 1395,348 1420,323 1420,292"
+        fill="none" stroke="#DCDAD4" stroke-width="50" stroke-linecap="butt"/>
+  <path d="M 1040,348 L 1364,348 C 1395,348 1420,323 1420,292"
+        fill="none" stroke="#F6F5F2" stroke-width="4" stroke-dasharray="20 18"/>
+
+  <!-- リアウイング断面：フラップ閉（ブロック1と同一） -->
+  <g transform="translate(1250,452)">
+    <rect x="-46" y="58" width="96" height="10" rx="5" fill="#191B1F" opacity="0.5"/>
+    <rect x="-10" y="26" width="14" height="34" rx="3" fill="#191B1F"/>
+    <rect x="-90" y="18" width="180" height="16" rx="8" fill="#191B1F" transform="rotate(-10 0 26)"/>
+    <rect x="-18" y="-32" width="120" height="14" rx="7" fill="#191B1F" transform="rotate(-32 42 -25)"/>
+  </g>
+  <text x="1250" y="550" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#191B1F">コーナー手前で、また閉じる</text>
+
+  <!-- ============ 赤の注記（前後両方が動くことの補足） ============ -->
+  <text x="800" y="594" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#D4342A">2025年までは、後ろのウイングだけを開けるDRSだった。</text>
+  <text x="800" y="630" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#D4342A">2026年からは、前と後ろの両方が動く。</text>
+
+  <!-- ============ 旧称の注記（過去記事との突き合わせ用） ============ -->
+  <text x="800" y="676" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">※ Corner Mode はかつて Z-mode、Straight Mode はかつて X-mode と呼ばれていた。</text>
+
+  <!-- ============ フッタ ============ -->
+  <text x="88" y="730" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第3回「う」　ウイング</text>
+</svg>
