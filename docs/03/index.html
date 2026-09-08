@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第3回「う」ウイング｜F1のことば、あいうえお</title>
+<meta name="description" content="飛行機の翼は上側がふくらんだ形で、空気が流れると上向きの力（揚力）が生まれます。">
+<link rel="canonical" href="https://kiyo138.github.io/f1-column/03/">
+<meta property="og:title" content="第3回「う」ウイング｜F1のことば、あいうえお">
+<meta property="og:description" content="飛行機の翼は上側がふくらんだ形で、空気が流れると上向きの力（揚力）が生まれます。">
+<meta property="og:image" content="https://kiyo138.github.io/f1-column/03/f1-03-hero.png">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kiyo138.github.io/f1-column/03/">
+<meta property="og:site_name" content="F1のことば、あいうえお">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/* --- 1. カラートークン ------------------------------------ */
+:root{
+  color-scheme: light dark;
+
+  --bg:          #F6F5F2;  /* 連載の地色。図版PNGの地と同一 */
+  --ink:         #191B1F;  /* 本文 */
+  --sub:         #5A5D64;  /* 補助文字。地色に対し 6.05:1 */
+  --accent:      #D4342A;  /* 強調。罫・マーク・大きな文字専用（地色に対し 4.46:1） */
+  --accent-text: #B32A21;  /* 小さい文字用に暗くした強調色（5.89:1）*/
+
+  /* 基調4色から起こした中間色 */
+  --rule:        #DDDAD3;  /* 細罫・画像の縁 */
+  --rule-strong: #C6C2B9;  /* 押せる要素の縁 */
+  --panel:       #EDEBE5;  /* 箇条書きなどの面 */
+  --card:        #FCFBF9;  /* カード・ボタンの面 */
+  --plate-rim:   #DDDAD3;  /* 画像の縁（暗色時に差し替える） */
+  --img-filter:  none;
+
+  /* 寸法 */
+  --measure: 41.5rem;      /* 本文1行の最大幅 = 664px */
+  --wide:    57.5rem;      /* 図版の最大幅   = 920px */
+  --pad:     1rem;         /* 画面左右の余白（狭い画面） */
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:          #15171A;
+    --ink:         #E9E7E2;
+    --sub:         #A8ABB1;  /* 8.0:1 */
+    --accent:      #F2564A;  /* 5.3:1 …暗色時は小さい文字にも使える */
+    --accent-text: #F2564A;
+    --rule:        #2E3238;
+    --rule-strong: #3D424A;
+    --panel:       #1D2126;
+    --card:        #1B1E23;
+    --plate-rim:   #4A5058;  /* 明るい図版を暗い地から縁取る */
+    --img-filter:  brightness(.90);
+  }
+}
+
+/* --- 2. 下地 ---------------------------------------------- */
+*, *::before, *::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  /* OS標準のみ。Latinはsystem-ui、和文は各OSの標準ゴシックに落ちる */
+  font-family:
+    system-ui, -apple-system,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP",
+    "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", YuGothic,
+    "Meiryo", sans-serif;
+  font-size:1.0625rem;      /* 17px */
+  line-height:1.9;
+  letter-spacing:.03em;
+  line-break:strict;        /* 和文の禁則を厳密に */
+  text-rendering:optimizeLegibility;
+}
+@media (min-width:600px){
+  body{ font-size:1.125rem; }   /* 18px */
+  :root{ --pad:1.5rem; }
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
+a:focus-visible, summary:focus-visible{
+  outline:3px solid var(--ink);
+  outline-offset:3px;
+  border-radius:4px;
+}
+.skip{
+  position:absolute; left:-9999px; top:0;
+  background:var(--card); color:var(--ink);
+  padding:12px 16px; border:2px solid var(--ink); z-index:10;
+}
+.skip:focus{ left:8px; top:8px; }
+
+/* --- 3. 桁組み -------------------------------------------- */
+.wrap{ max-width:var(--wide); margin-inline:auto; padding-inline:var(--pad); }
+.col { max-width:var(--measure); margin-inline:auto; }
+.prose > *      { max-width:var(--measure); margin-inline:auto; }
+.prose > figure { max-width:var(--wide); }
+
+/* --- 4. ヘッダ／フッタ ------------------------------------ */
+.topbar{ border-bottom:1px solid var(--rule); background:var(--bg); }
+.topbar-inner{ max-width:var(--measure); margin-inline:auto; padding-inline:var(--pad); }
+.series{
+  display:inline-block;
+  padding:14px 0;
+  font-size:.9375rem;          /* 15px */
+  letter-spacing:.16em;
+  color:var(--sub);
+  text-decoration:none;
+  min-height:44px;             /* 押せる高さを確保 */
+}
+.series:hover{ color:var(--ink); }
+
+.site-footer{
+  margin:56px auto 40px;
+  padding-top:20px;
+  border-top:1px solid var(--rule);
+  font-size:.9375rem;
+  letter-spacing:.14em;
+  color:var(--sub);
+}
+
+/* --- 5. 記事タイトル -------------------------------------- */
+.title-block{ margin:36px auto 24px; }
+.eyebrow{
+  margin:0 0 10px;
+  font-size:.9375rem;          /* 15px */
+  letter-spacing:.14em;
+  color:var(--sub);
+  line-height:1.4;
+}
+.title{
+  margin:0;
+  display:flex; align-items:center; gap:.5rem;
+  font-size:1.875rem;          /* 30px */
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:.04em;
+  font-feature-settings:"palt" 1;   /* 見出しの約物アキを詰める */
+}
+@media (min-width:600px){
+  .title{ font-size:2.375rem; gap:.625rem; }   /* 38px */
+}
+
+/* かなタイル ── 五十音順という連載の背骨を、記事・索引で同じ形に */
+.tile{
+  flex:none;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:1.75em; height:1.75em;
+  border:2px solid var(--accent);
+  border-radius:7px;
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:0;
+  line-height:1;
+  font-feature-settings:normal;
+}
+
+/* --- 6. 本文 ---------------------------------------------- */
+.prose{ margin-top:8px; }
+.prose p{ margin:0 0 1.55em; }
+.prose p:last-child{ margin-bottom:0; }
+
+.lede{
+  color:var(--sub);
+  font-size:1.0625em;
+  margin-bottom:2em !important;
+}
+
+.prose h2{
+  margin:48px 0 18px;
+  font-size:1.3125rem;         /* 21px */
+  line-height:1.55;
+  font-weight:700;
+  letter-spacing:.03em;
+  font-feature-settings:"palt" 1;
+}
+.prose h2::after{             /* 図版PNGの「見出し＋赤い下線」に揃える */
+  content:"";
+  display:block;
+  width:72px; height:3px;
+  margin-top:10px;
+  background:var(--accent);
+}
+@media (min-width:600px){
+  .prose h2{ font-size:1.4375rem; margin-top:64px; }  /* 23px */
+}
+
+/* 箇条書き ── 本文の流れから拾い読みできるよう、面で区切る */
+.prose ul{
+  list-style:none;
+  margin:0 0 1.8em;
+  padding:18px 20px 18px 22px;
+  background:var(--panel);
+  border-radius:8px;
+}
+.prose li{
+  position:relative;
+  padding-left:1.15em;
+  margin:0 0 .55em;
+  line-height:1.8;
+}
+.prose li:last-child{ margin-bottom:0; }
+.prose li::before{            /* 原稿の「・」に相当する印 */
+  content:"";
+  position:absolute;
+  left:0; top:.72em;
+  width:7px; height:7px;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+/* --- 7. 図版 ---------------------------------------------- */
+.fig{ margin:36px auto; }
+@media (min-width:600px){ .fig{ margin:44px auto; } }
+
+.plate{                       /* 画像を包む枠。地色が図版の地と同じなので細罫だけで足りる */
+  display:block;
+  border:1px solid var(--plate-rim);
+  border-radius:10px;
+  overflow:hidden;
+  background:#F6F5F2;
+  filter:var(--img-filter);
+}
+a.plate{ text-decoration:none; }
+a.plate:hover{ border-color:var(--rule-strong); }
+.fig-hero{ margin-top:8px; }
+
+figcaption{
+  margin-top:12px;
+  font-size:1rem;             /* 16px */
+  line-height:1.75;
+  color:var(--sub);
+}
+.cap-hint{
+  display:block;
+  margin-top:4px;
+  font-size:.9375rem;
+  color:var(--sub);
+}
+.cap-hint::before{ content:"⤢ "; }
+
+/* --- 8. 次回予告（控えめに） ------------------------------ */
+.next-up{
+  margin:48px auto 0;
+  padding-top:20px;
+  border-top:1px solid var(--rule);
+  color:var(--sub);
+  font-size:1rem;
+  line-height:1.85;
+}
+.next-up .label{
+  display:block;
+  margin-bottom:2px;
+  font-size:.875rem;
+  letter-spacing:.18em;
+  color:var(--accent-text);
+  font-weight:700;
+}
+
+/* --- 9. 記事末ナビ ---------------------------------------- */
+.pager{ margin:40px auto 0; }
+.pager-index{
+  display:flex; align-items:center; justify-content:center;
+  min-height:56px;
+  padding:12px 16px;
+  border:1px solid var(--rule-strong);
+  border-radius:8px;
+  background:var(--card);
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.06em;
+}
+.pager-index:hover{ background:var(--panel); }
+
+.pager-sides{
+  display:grid; gap:12px;
+  grid-template-columns:1fr;
+  margin-top:12px;
+}
+@media (min-width:600px){
+  .pager-sides{ grid-template-columns:1fr 1fr; gap:16px; }
+}
+
+.pager-link, .pager-empty{
+  margin:0;
+  min-height:76px;
+  padding:14px 16px;
+  border-radius:8px;
+  display:flex; flex-direction:column; justify-content:center; gap:6px;
+}
+.pager-link{                          /* 行ける側：面と枠を強く、矢印つき */
+  border:1px solid var(--rule-strong);
+  background:var(--card);
+  text-decoration:none;
+  color:var(--ink);
+}
+.pager-link:hover{ background:var(--panel); }
+.pager-empty{                         /* 欠けている側：面なし・枠は細罫・押せない見た目 */
+  border:1px dashed var(--rule);
+  background:transparent;
+  color:var(--sub);
+}
+.pager-dir{
+  font-size:.9375rem;
+  letter-spacing:.1em;
+  color:var(--sub);
+  line-height:1.4;
+}
+.pager-link .pager-dir{ color:var(--accent-text); font-weight:700; }
+.pager-title{
+  display:flex; align-items:center; gap:.45rem;
+  font-size:1.0625rem; font-weight:700; line-height:1.4;
+}
+.pager-msg{ font-size:1rem; line-height:1.6; }
+.tile-sm{
+  font-size:.9375rem;
+  width:1.9em; height:1.9em;
+  border-width:1.5px; border-radius:5px;
+}
+.next .pager-dir{ text-align:right; }
+.next .pager-title{ justify-content:flex-end; }
+.pager-empty.next{ align-items:flex-end; text-align:right; }
+@media (max-width:599px){             /* 狭い画面では左揃えに戻す（行頭が揃うほうが読みやすい） */
+  .next .pager-dir, .pager-empty.next{ text-align:left; }
+  .next .pager-title{ justify-content:flex-start; }
+  .pager-empty.next{ align-items:flex-start; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">本文へ</a>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="series" href="../">F1のことば、あいうえお</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="col title-block">
+    <p class="eyebrow">第3回</p>
+    <h1 class="title"><span class="tile">う</span><span class="word">ウイング</span></h1>
+  </div>
+
+  <main id="main">
+
+    <figure class="fig fig-hero">
+      <span class="plate">
+        <img src="f1-03-hero.png" width="1600" height="900" alt="第3回「う」ウイング のアイキャッチ画像">
+      </span>
+    </figure>
+
+    <div class="prose">
+      <h2>飛行機の翼を、さかさまにする</h2>
+      <p>飛行機の翼は上側がふくらんだ形で、空気が流れると上向きの力（揚力）が生まれます。</p>
+      <p>F1のウイングは、この翼を上下さかさまに取り付けたものです。</p>
+      <p>形がさかさまなら、車を路面へ押しつける力が生まれます。これがダウンフォースです。</p>
+      <p>前後に1枚ずつあります（フロントウイング、リアウイング）。飛ぶための翼ではなく、飛ばないための翼です。</p>
+      <figure class="fig">
+        <a class="plate" href="f1-03-wing.png">
+          <img src="f1-03-wing.png" width="1600" height="780" loading="lazy" alt="飛行機の翼を上下さかさまにするとダウンフォースが生まれることを示した図">
+        </a>
+        <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+      </figure>
+      <h2>なぜ、押しつけるのか</h2>
+      <p>押しつける力が強いほど、タイヤは路面をよくつかみます。</p>
+      <p>第1回で、アンダーステアとは前のタイヤのグリップが足りず曲がらない状態だと書きました。押しつける力が足りないと、まさにこれが起きます。</p>
+      <p>ただし、タダではありません。空気を下へ押す代わりに、車は後ろへ引き戻されます。これが空気抵抗、ドラッグです。</p>
+      <h2>立てるか、寝かせるか</h2>
+      <p>ウイングは角度を変えられます。板を立てるか、寝かせるか。</p>
+      <p>立てれば押しつけが強くなりコーナーは速くなりますが、空気抵抗が増え直線は遅くなります。寝かせればその逆で、直線は速くてもコーナーで曲がりきれません。</p>
+      <p>どちらを取るかはサーキット次第。全部は手に入りません。</p>
+      <p>レースの最中でも、ピットで調整できます。第1回で「フロントウイングの角度を立てる」と書いたのがこれです。</p>
+      <h2>2026年、ウイングが動きはじめた</h2>
+      <p>2026年、ウイングは走りながら自分で形を変えるようになりました。</p>
+      <p>2025年まではDRS（ドラッグ・リダクション・システム）。前との差が1秒以内のとき、指定区間でリアウイングを開けました。2011年から使われ、2025年のアブダビが最後でした。</p>
+      <p>2026年からは廃止され、代わりに「アクティブエアロ」に。前後とも、フラップ（可動する板）が動きます。</p>
+      <p>コーナー用は「コーナーモード」で板を閉じ、押しつけを最大に。直線用は「ストレートモード」で板を開き、抵抗を減らします。かつてはZ-mode、X-modeと呼ばれていました。</p>
+      <p>開くのはドライバーがボタンを押したときだけ。アクセルを戻すかブレーキを踏めば自動で閉じます。区間はFIAが決めますが、DRSと違い「1秒以内」の条件はなく、全車が毎周使えます。</p>
+      <p>つまり前節の「立てるか、寝かせるか」を走りながら切り替えているのです。どちらか選ぶしかなかったものを、両方取りにいっています。</p>
+      <p>追い抜きの支援はDRSから「オーバーテイクモード」に。前との差が1秒以内なら、追加の電気エネルギーを使えます。</p>
+      <p>車全体としては、2026年の車は空気抵抗を約55％、ダウンフォースを約30％減らす狙いの設計です。</p>
+      <figure class="fig">
+        <a class="plate" href="f1-03-mode.png">
+          <img src="f1-03-mode.png" width="1600" height="770" loading="lazy" alt="コーナーモードとストレートモードでフラップの開閉が切り替わるアクティブエアロの図">
+        </a>
+        <figcaption><span class="cap-hint">画像をタップすると大きく表示できます</span></figcaption>
+      </figure>
+      <h2>中継での見つけ方</h2>
+      <p>DRSは開く瞬間がはっきり見えました。ストレートモードは1周に何度も切り替わり、肉眼では気づきにくいのが実情です。だからこそ、狙って見る価値があります。</p>
+      <p>手がかりは、区間の入口に立つ看板と、中継のトラックマップに表示される区間です。</p>
+      <p>ピットで、フロントウイングの端に工具を差し込んでひねる場面。あれが角度の調整です。</p>
+      <p>気づけたときの手応えは、DRSより大きいはずです。</p>
+    </div><!-- /.prose -->
+
+    <div class="col next-up">
+      <span class="label">次回</span>
+      次回は「え」。ためた電気を、ここぞで使い切る。あの言葉を予定しています。
+    </div>
+
+    <nav class="col pager" aria-label="記事の移動">
+      <a class="pager-index" href="../">← 索引へ</a>
+      <div class="pager-sides">
+        <a class="pager-link prev" href="../02/">
+          <span class="pager-dir">← 前の回</span>
+          <span class="pager-title"><span class="tile tile-sm">い</span>インターミディエイト</span>
+        </a>
+        <p class="pager-empty next">
+          <span class="pager-dir">次の回</span>
+          <span class="pager-msg">これが最新回です。毎週ひとつ増えます。</span>
+        </p>
+      </div>
+    </nav>
+
+  </main>
+
+  <footer class="col site-footer">F1のことば、あいうえお</footer>
+</div>
+
+</body>
+</html>
