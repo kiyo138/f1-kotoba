@@ -30,8 +30,12 @@ allowed-tools: Read, Write, Edit, Glob, Bash, WebSearch, WebFetch
 `ルート/` を Glob して既存の `f1-column-NN` フォルダを列挙し、
 最新回の `本文.txt` を読んで、次に扱う文字と回数を決める。
 
-- 五十音順（あ→い→う→え→お→か→…）で1回につき1語
+- 1回につき1語。五十音順（あ→い→う→え→お→か→…）に進める
+- **同じ文字が複数回続いてよい。**「あ」で3回、といった配分でも構わない。
+  良い語が複数あるなら、無理に次の文字へ送らず、その文字を掘り下げること。
+  1文字1語に押し込めて語を取りこぼすほうが損である
 - 引数で語が指定されていればそれを使う
+- 語の候補は下記の用語集を当たる（記憶だけで選ばない）
 - 該当する文字で適切なF1用語が思いつかない場合は、
   候補を2〜3案挙げて **作業を止め、私に確認する**
 - 最新回の末尾にある「次回は◯◯」という予告と矛盾しないようにする
@@ -43,6 +47,20 @@ allowed-tools: Read, Write, Edit, Glob, Bash, WebSearch, WebFetch
 「〜と言われます」等の表現に逃げるか、その記述ごと落とす。
 
 出典が複数で食い違う場合は、より新しい・より一次に近いものを採る。
+
+**語の選定と裏取りに使う用語集**
+
+まずここを当たってから、個別の事実を WebSearch で裏取りする。
+
+- Honda 公式 F1用語集
+  http://global.honda/jp/tech/motorsports/Formula-1/glossary/category/
+- F1-Data 用語集
+  https://formula1-data.com/glossary
+- AUTOSPORT web ／ F1基礎用語
+  https://www.as-web.jp/feature/basic_terms
+
+これらは**語を見つけるため**の一覧であって、数値の一次情報ではない。
+数字・現行ルールは formula1.com / fia.com など一次に近いもので裏を取ること。
 
 ### 3. 本文を書く
 
