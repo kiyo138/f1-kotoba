@@ -20,7 +20,7 @@ from pathlib import Path
 # 0. 定数
 # ============================================================
 
-BASE_URL = "https://kiyo138.github.io/f1-column"  # 末尾スラッシュなし。この1箇所のみに書く
+BASE_URL = "https://kiyo138.github.io/f1-kotoba"  # 末尾スラッシュなし。この1箇所のみに書く
 SITE_TITLE = "F1のことば、あいうえお"
 
 ROOT = Path(__file__).resolve().parent
