@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 470" width="1600" height="470" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">貯めるところ、使うところ</title>
+  <desc id="desc">架空の1周区間を、コーナー出口〜直線前半・直線の終わり・ブレーキ手前・ブレーキ区間の4つの位置に分けて描いた模式図。コーナー出口から直線の前半では、ためた電気を使って加速する（ブースト）。直線の終わりでは全開のまま少しだけ電気を貯め（スーパークリッピング）、ブレーキの手前ではアクセルを戻して電気を貯め（リフト・アンド・コースト、このときアクティブエアロは閉じる）、ブレーキ区間ではブレーキで電気を貯める。使う場面を赤、貯める場面を青の矢印で示し、矢印の先端はそれぞれ道路上の該当位置に置いている。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第4回 解説図1（lap） 監査差し戻し対応版
+    「貯めるところ、使うところ」 1600 x 470
+
+    ■ 差し戻し対応（監査指摘2・3・4、推奨1・2）
+      指摘2: 「直線＝貯める」という誤った大見出しをやめ、直線の前半（コーナー
+             出口〜直線前半）は「使う」であることを明示した。
+      指摘3: 「貯める　メイン」の「メイン」（出典に無い断定）を削除した。
+      指摘4: スーパークリッピング（直線の終わり）とリフト・アンド・コースト
+             （ブレーキ手前）を1点にまとめず、道路上の別の位置に分けて置いた。
+      推奨1: 道路の外へ落ちる意味不明な淡い青の四角（受け皿）を廃止し、矢印の
+             先端は必ず道路の線（パス）の上に着地させた。
+      推奨2: 見出し行と道路の間の大きな空白をやめ、位置ラベルをその空間に
+             詰めて配置し、全体の高さも 700→470 に縮めて間延びを解消した。
+
+    ■ この図の構成（架空の模式コース。実在コースは模さない）
+      道路上、進行方向（左→右）に4つの位置を置く。
+        (a) コーナー出口〜直線前半 … 使う（ためた電気で加速、ブースト）… 赤
+        (b) 直線の終わり           … 貯める（全開のまま少し・スーパークリッピング）… 青
+        (c) ブレーキの手前         … 貯める（アクセルを戻す・リフト・アンド・コースト。
+                                       このときアクティブエアロは閉じる）… 青
+        (d) ブレーキ区間           … 貯める（ブレーキで貯める）… 青
+      (b)(c)(d) は道路上の x=1000 / 1180 / 1360 に置き、道路全体（x=220–1380）の
+      右側に寄って順に並ぶ。(b)と(c)は160px以上離れており、1点に重ねていない。
+
+      ラベル文字は位置ごとに横へ十分な余白（等間隔380pxごと）を取って並べ、
+      各ラベルから道路上の実際の位置まで、色付きの矢印（線＋SVGマーカーの
+      矢じり）を引く。矢じりの先端座標は道路のパス上の座標と一致させている
+      （下記「矢印の着地点の検算」）。
+
+    ■ 矢印の着地点の検算
+      道路パス： M 220,284 C 220,315 245,340 276,340 L 1324,340
+                 C 1355,340 1380,315 1380,284
+      直線部（x=276–1324）は y=340 の水平線なので、(a)(b)(c) の着地点は
+      そのまま (420,340) (1000,340) (1180,340) でパス上に乗る。
+      (d) はブレーキ区間の曲線部に置くため、区間 C 1324,340 1355,340 1380,315
+      1380,284 上のベジエ曲線を t=0.45 で評価した。
+        B(t) = (1-t)^3 P0 + 3(1-t)^2 t P1 + 3(1-t) t^2 P2 + t^3 P3
+        P0=(1324,340) P1=(1355,340) P2=(1380,315) P3=(1380,284)
+        t=0.45 → (1360.5, 326.6) ≈ (1360,327) をパス上の着地点として採用。
+
+    ■ ラベル縦方向の検算（最終行から道路までの間隔が正であることの確認）
+      (a) 4行 195/217/239/261 → 連結線開始281 → 着地(420,340) 間隔59px
+      (b) 4行 195/217/239/261 → 連結線開始281 → 着地(1000,340) 間隔59px
+      (c) 5行 195/217/239/261/281 → 連結線開始295 → 着地(1180,340) 間隔45px
+      (d) 3行 195/217/239 → 連結線開始253 → 着地(1360,327) 間隔74px
+      いずれも間隔は正で、連結線・矢じりが直前のラベル文字と重ならない。
+
+    ■ ラベル横方向の検算（隣接ラベルの文字幅が隣と衝突しないための概算。和字=1em）
+      ラベルは x=260 / 640 / 1020 / 1400 の等間隔380pxごとに中央揃えで置く。
+      各列内でもっとも長い行は (c)「（リフト・アンド・コースト）」14字×18=252px
+      → 中心1020を挟み894–1146。隣の(b)最長行「（スーパークリッピング）」
+      13字×18=234pxは中心640を挟み523–757。894−757=137px（20px以上の余白あり）。
+      (d)最長行「ブレーキで貯める」8字×18=144pxは中心1400を挟み1328–1472。
+      (c)の右端1146との間隔は1328−1146=182px。
+
+    ■ 色の役割分担
+      #D4342A 赤     … 使う（電気を使う場面）
+      #1B4FD8 コバルト… 貯める（電気を貯める場面）
+      #191B1F インク … 見出し・主文字
+      #5A5D64 グレー … 補助文字・進行方向の矢印・注記
+      #DCDAD4 路面帯 ／ #F6F5F2 背景
+
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ■ 影・ぼかしフィルタは使わない
+    ============================================================
+  -->
+
+  <defs>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#D4342A"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1B4FD8"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="470" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">貯めるところ、使うところ</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">ブレーキとコーナーの間で、電気を貯めて使います。</text>
+
+  <!-- ============ 凡例（貯める／使う） ============ -->
+  <rect x="1300" y="140" width="18" height="18" fill="#1B4FD8"/>
+  <text x="1326" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">貯める</text>
+  <rect x="1420" y="140" width="18" height="18" fill="#D4342A"/>
+  <text x="1446" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">使う</text>
+
+  <!-- ============ 路面（コーナー出口→直線→ブレーキ区間） ============
+       先にパスを描き、位置ラベル・矢印・着地点の目印は路面の上に重ねて描く
+       （矢じりが路面帯に隠れないよう、描画順を路面→ラベルの順にしている）。 -->
+  <path d="M 220,284 C 220,315 245,340 276,340 L 1324,340 C 1355,340 1380,315 1380,284"
+        fill="none" stroke="#DCDAD4" stroke-width="50" stroke-linecap="butt"/>
+  <path d="M 220,284 C 220,315 245,340 276,340 L 1324,340 C 1355,340 1380,315 1380,284"
+        fill="none" stroke="#F6F5F2" stroke-width="4" stroke-dasharray="20 18"/>
+
+  <!-- 進行方向の目印（グレーの山形を路面上に2つ。位置(a)と(b)の間） -->
+  <polyline points="650,332 664,340 650,348" fill="none" stroke="#5A5D64" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="850,332 864,340 850,348" fill="none" stroke="#5A5D64" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ================================================================
+       ラベル(a) コーナー出口〜直線前半（中心 x=260） 使う・赤
+       ================================================================ -->
+  <text x="260" y="195" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#5A5D64">コーナー出口〜直線前半</text>
+  <text x="260" y="221" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#D4342A">使う</text>
+  <text x="260" y="245" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">ためた電気で加速する</text>
+  <text x="260" y="267" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">（ブースト）</text>
+  <line x1="260" y1="281" x2="420" y2="340" stroke="#D4342A" stroke-width="4" marker-end="url(#arrowRed)"/>
+
+  <!-- ================================================================
+       ラベル(b) 直線の終わり（中心 x=640） 貯める・青（スーパークリッピング）
+       ================================================================ -->
+  <text x="640" y="195" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#5A5D64">直線の終わり</text>
+  <text x="640" y="221" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#1B4FD8">貯める</text>
+  <text x="640" y="245" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">全開のまま少し貯める</text>
+  <text x="640" y="267" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">（スーパークリッピング）</text>
+  <line x1="640" y1="281" x2="1000" y2="340" stroke="#1B4FD8" stroke-width="4" marker-end="url(#arrowBlue)"/>
+
+  <!-- ================================================================
+       ラベル(c) ブレーキの手前（中心 x=1020） 貯める・青（リフト・アンド・コースト）
+       ================================================================ -->
+  <text x="1020" y="195" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#5A5D64">ブレーキの手前</text>
+  <text x="1020" y="221" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#1B4FD8">貯める</text>
+  <text x="1020" y="245" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">アクセルを戻して貯める</text>
+  <text x="1020" y="267" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">（リフト・アンド・コースト）</text>
+  <text x="1020" y="284" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="14" font-weight="400" fill="#D4342A">※このときアクティブエアロは閉じる</text>
+  <line x1="1020" y1="295" x2="1180" y2="340" stroke="#1B4FD8" stroke-width="4" marker-end="url(#arrowBlue)"/>
+
+  <!-- ================================================================
+       ラベル(d) ブレーキ区間（中心 x=1400） 貯める・青
+       ================================================================ -->
+  <text x="1400" y="195" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#5A5D64">ブレーキ区間</text>
+  <text x="1400" y="221" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#1B4FD8">貯める</text>
+  <text x="1400" y="245" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#191B1F">ブレーキで貯める</text>
+  <line x1="1400" y1="253" x2="1360" y2="327" stroke="#1B4FD8" stroke-width="4" marker-end="url(#arrowBlue)"/>
+
+  <!-- 着地点の目印（矢じりの先端が乗る道路上の位置） -->
+  <circle cx="420" cy="340" r="4" fill="#D4342A"/>
+  <circle cx="1000" cy="340" r="4" fill="#1B4FD8"/>
+  <circle cx="1180" cy="340" r="4" fill="#1B4FD8"/>
+  <circle cx="1360" cy="327" r="4" fill="#1B4FD8"/>
+
+  <!-- ============ 補助注記 ============ -->
+  <text x="1512" y="400" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64">※ブーストは1周のどこでも使えます。図は一例です。</text>
+
+  <!-- ============ フッタ ============ -->
+  <text x="88" y="440" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第4回「え」　エネルギーマネージメント</text>
+</svg>
