@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 660" width="1600" height="660" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">先に入るか、あとに入るか</title>
+  <desc id="desc">同じ時間の流れを上下で共有し、2つの作戦を比べた図。上段はアンダーカットで、後ろの車が先にピットへ入り、前の車があとから入る。下段はオーバーカットで、前の車が先に入り、後ろの車はそのあと数周走ってから入る。古いタイヤの区間は斜線の入った薄い帯、新しいタイヤの区間は黒い帯で描き分け、ピットに入った地点は赤い印と下向きの三角で示している。下段には、前が空いた数周で差を稼ぐという注記を添えている。周回数や秒数は書いていない。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第5回 解説図1（timing）
+    「先に入るか、あとに入るか」 1600 x 660
+
+    ■ この図の主張
+      本文の言い換えではなく「同じ時間軸のどこで入るか」という関係を見せる。
+      上段＝アンダーカット／下段＝オーバーカット。
+      2つの作戦は「先に入る時点」と「あとに入る時点」という同じ2つの時点を共有し、
+      どちらの車がどちらの時点で入るかが入れ替わっているだけ、という構図にした。
+      これにより周回数・秒数を一切書かずに、順序の違いだけを示せる。
+
+    ■ 時間軸（横）の設計
+      帯の範囲 x=300–1460（1160px）。時間の流れは左→右。
+      共有する2つの時点を x=640（先）と x=1000（あと）に置き、
+      上下を貫く縦の破線で結んで「同じ時間軸」であることを示す（破線は帯の背面に置き、
+      帯の間の空きと帯の上下に見えるようにしている）。
+      ピットに入る地点は、その時点を中心に幅26pxの赤い区画（ピットで止まっている間）とした。
+        時点 S=640  … 古い 300–627（327px）／ピット 627–653（26px）／新しい 653–1460（807px）
+        時点 S=1000 … 古い 300–987（687px）／ピット 987–1013（26px）／新しい 1013–1460（447px）
+
+    ■ 縦方向の座標
+      軸線 y=205（目盛り 197–213、目盛り文字 baseline 230）
+      上段 帯1 262–306 ／ 帯2 328–372（見出し baseline 238、左の縦アクセント 254–372）
+      下段 帯1 438–482 ／ 帯2 504–548（見出し baseline 414、左の縦アクセント 430–548）
+      くくり線 556–566 ／ 注記 baseline 592 ／ フッタ baseline 628（下余白32px）
+      帯の間を22px空け、下向き三角（高さ16px）が上の帯と重ならないようにしている
+      （三角の上端 312 対 上の帯の下端 306＝6pxの空き）。
+
+    ■ 矢印・三角の先端の検算（先端が必ず対象の上に落ちること）
+      三角の頂点は、指し示すピット区画の上辺そのものに置いた。
+        上段・後ろの車 (640,328) ／ 上段・前の車 (1000,262)
+        下段・前の車  (640,438) ／ 下段・後ろの車 (1000,504)
+      いずれも帯の y 座標と一致しており、帯の外に落ちることはない。
+
+    ■ 横方向の検算（和字1字=font-size と見積もる）
+      帯の中の文字：古い687px区間に「古いタイヤのまま」8字×20=160px／
+        古い327px区間に「古いタイヤ」5字×20=100px／
+        新しい807px・447px区間に「新しいタイヤ」6字×20=120px。いずれも区間内に収まる。
+      目盛り文字：「ここで入る（先）」8字×18=144px → 中心640で568–712。
+        「ここで入る（あと）」9字×18=162px → 中心1000で919–1081。重なりなし。
+      見出し脇の添え書き：「後ろの車が　先に入る」10字×19=190px → x=318で318–508。
+        目盛り文字の左端568までに60pxの空きがある。
+      注記：「前が空いたこの数周で差を稼ぐ」14字×20=280px → 中心820で680–960。
+        くくり線の範囲653–987の内側。
+      凡例：1034から右へ並べ、最右端は1504（右余白 1600−1504=96px）。
+
+    ■ 色の役割分担
+      #191B1F インク … 見出し・主文字・新しいタイヤの帯
+      #5A5D64 グレー … 補助文字・軸・上段（アンダーカット）の縁
+      #D4342A 赤     … ピットに入る地点（強調）
+      #0E8FA8 シアン … オーバーカット側であることの印（下段の見出し・縁・くくり線・注記）
+      #DCDAD4＋#BFBCB5 斜線 … 古いタイヤのまま ／ #F6F5F2 背景
+      色だけに頼らないため、帯の中に「古いタイヤ」「新しいタイヤ」の文字を必ず入れている。
+
+    ■ 数値を書かない方針
+      「◯周目」「◯秒」は裏が取れないため書かない。
+      「先に入る」「あとに入る」「この数周」という相対表現に留めた。
+
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ■ 影・ぼかしフィルタは使わない
+    ■ 実在チーム・ドライバー・コースは想起させない（「前の車」「後ろの車」とだけ呼ぶ）
+    ============================================================
+  -->
+
+  <defs>
+    <!-- 古いタイヤの区間：斜線の模様（色だけに頼らないための描き分け） -->
+    <pattern id="oldTyre" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="12" height="12" fill="#DCDAD4"/>
+      <rect x="0" y="0" width="4"  height="12" fill="#BFBCB5"/>
+    </pattern>
+
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5A5D64"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="660" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">先に入るか、あとに入るか</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">同じ時間の流れの上で、ピットに入る場所がちがいます。</text>
+
+  <!-- ============ 凡例 ============ -->
+  <rect x="1034" y="140" width="18" height="18" fill="url(#oldTyre)" stroke="#A9A6A0" stroke-width="1"/>
+  <text x="1060" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">古いタイヤ</text>
+  <rect x="1190" y="140" width="18" height="18" fill="#191B1F"/>
+  <text x="1216" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">新しいタイヤ</text>
+  <rect x="1364" y="137" width="10" height="22" fill="#D4342A"/>
+  <text x="1384" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">ピットに入る</text>
+
+  <!-- ============ 時間軸 ============ -->
+  <line x1="300" y1="205" x2="1470" y2="205" stroke="#5A5D64" stroke-width="2.5" marker-end="url(#arrowGray)"/>
+  <text x="1470" y="190" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="19" font-weight="400" fill="#5A5D64">時間の流れ（周回が進む）</text>
+
+  <!-- 共有する2つの時点の目盛り -->
+  <line x1="640"  y1="197" x2="640"  y2="213" stroke="#5A5D64" stroke-width="2.5"/>
+  <line x1="1000" y1="197" x2="1000" y2="213" stroke="#5A5D64" stroke-width="2.5"/>
+  <text x="640"  y="230" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="700" fill="#D4342A">ここで入る（先）</text>
+  <text x="1000" y="230" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="700" fill="#D4342A">ここで入る（あと）</text>
+
+  <!-- 上下を貫く縦の破線（帯より先に描き、帯の背面に置く） -->
+  <line x1="640"  y1="214" x2="640"  y2="560" stroke="#A9A6A0" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="1000" y1="214" x2="1000" y2="560" stroke="#A9A6A0" stroke-width="2" stroke-dasharray="8 8"/>
+
+  <!-- ================================================================
+       上段：アンダーカット（後ろの車が先に入る）
+       ================================================================ -->
+  <text x="88"  y="238" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">アンダーカット</text>
+  <text x="318" y="238" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="19" font-weight="400" fill="#5A5D64">後ろの車が　先に入る</text>
+  <rect x="70" y="254" width="6" height="118" fill="#5A5D64"/>
+
+  <!-- 上段・前の車（あとに入る） -->
+  <text x="288" y="291" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">前の車</text>
+  <rect x="300"  y="262" width="687" height="44" fill="url(#oldTyre)"/>
+  <rect x="987"  y="262" width="26"  height="44" fill="#D4342A"/>
+  <rect x="1013" y="262" width="447" height="44" fill="#191B1F"/>
+  <rect x="300"  y="262" width="1160" height="44" fill="none" stroke="#5A5D64" stroke-width="2"/>
+  <text x="643"  y="291" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">古いタイヤのまま</text>
+  <text x="1236" y="291" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">新しいタイヤ</text>
+  <polygon points="990,246 1010,246 1000,262" fill="#D4342A"/>
+
+  <!-- 上段・後ろの車（先に入る） -->
+  <text x="288" y="357" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">後ろの車</text>
+  <rect x="300" y="328" width="327"  height="44" fill="url(#oldTyre)"/>
+  <rect x="627" y="328" width="26"   height="44" fill="#D4342A"/>
+  <rect x="653" y="328" width="807"  height="44" fill="#191B1F"/>
+  <rect x="300" y="328" width="1160" height="44" fill="none" stroke="#5A5D64" stroke-width="2"/>
+  <text x="463"  y="357" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">古いタイヤ</text>
+  <text x="1056" y="357" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">新しいタイヤ</text>
+  <polygon points="630,312 650,312 640,328" fill="#D4342A"/>
+
+  <!-- ================================================================
+       下段：オーバーカット（後ろの車があとまで残る）
+       ================================================================ -->
+  <text x="88"  y="414" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#0E8FA8">オーバーカット</text>
+  <text x="318" y="414" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="19" font-weight="400" fill="#5A5D64">後ろの車が　あとに入る</text>
+  <rect x="70" y="430" width="6" height="118" fill="#0E8FA8"/>
+
+  <!-- 下段・前の車（先に入る） -->
+  <text x="288" y="467" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">前の車</text>
+  <rect x="300" y="438" width="327"  height="44" fill="url(#oldTyre)"/>
+  <rect x="627" y="438" width="26"   height="44" fill="#D4342A"/>
+  <rect x="653" y="438" width="807"  height="44" fill="#191B1F"/>
+  <rect x="300" y="438" width="1160" height="44" fill="none" stroke="#0E8FA8" stroke-width="2"/>
+  <text x="463"  y="467" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">古いタイヤ</text>
+  <text x="1056" y="467" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">新しいタイヤ</text>
+  <polygon points="630,422 650,422 640,438" fill="#D4342A"/>
+
+  <!-- 下段・後ろの車（あとまで残ってから入る） -->
+  <text x="288" y="533" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">後ろの車</text>
+  <rect x="300"  y="504" width="687"  height="44" fill="url(#oldTyre)"/>
+  <rect x="987"  y="504" width="26"   height="44" fill="#D4342A"/>
+  <rect x="1013" y="504" width="447"  height="44" fill="#191B1F"/>
+  <rect x="300"  y="504" width="1160" height="44" fill="none" stroke="#0E8FA8" stroke-width="2"/>
+  <text x="643"  y="533" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">古いタイヤのまま</text>
+  <text x="1236" y="533" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">新しいタイヤ</text>
+  <polygon points="990,488 1010,488 1000,504" fill="#D4342A"/>
+
+  <!-- オーバーカットの稼ぎどころ（前の車が入った時点から、自分が入る時点まで） -->
+  <path d="M 653,556 L 653,566 L 987,566 L 987,556" fill="none" stroke="#0E8FA8" stroke-width="3"/>
+  <text x="820" y="592" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#0E8FA8">前が空いたこの数周で差を稼ぐ</text>
+
+  <!-- ============ フッタ・注記 ============ -->
+  <text x="88" y="628" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第5回「お」　オーバーカット</text>
+  <text x="1512" y="628" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64">※ 何周目・何秒かはレースごとに変わるため、図には書いていません。</text>
+</svg>

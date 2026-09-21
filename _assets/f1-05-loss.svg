@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" width="1600" height="650" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">どこで時間を失うのか</title>
+  <desc id="desc">架空の単純なコースの一部を真上から見た模式図。上をコースがまっすぐ通り、そこから下へ分かれてピットレーンへ入り、また合流する道を描いている。コース側には、そのまま全速力で走れることを示す車を置いた。ピットレーン側には時間を失う場所を2つ示す。ひとつは制限速度で走らなければならない区間で、時速80km、市街地などでは60kmに下げられる。もうひとつは止まってタイヤ交換をする場所で、2秒台かかる。図の下に、この寄り道のぶん必ず時間を失うと記している。合計で何秒失うかという数値は書いていない。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第5回 解説図2（loss）
+    「どこで時間を失うのか」 1600 x 650
+
+    ■ この図の主張
+      本文の言い換えではなく「位置関係」を見せる図。
+      コースをそのまま走る道と、ピットレーンへ逸れて戻る道を並べ、
+      時間を失う場所が経路上のどこにあるのかを、場所として示す。
+
+    ■ 経路の設計（真上から見た模式図。架空で、どのサーキットにも似せない）
+      コース（本線）： M 120,390 C 120,300 176,268 236,268 L 1364,268 C 1424,268 1480,300 1480,390
+        直線部は x=236–1364 の y=268。線幅50なので帯は y=243–293。
+        両端は下へ抜けており「コースはこの先も続く」ことを示す。
+      ピットレーン： M 470,268 C 545,268 555,430 630,430 L 1090,430 C 1165,430 1175,268 1250,268
+        直線部は x=630–1090 の y=430。線幅50なので帯は y=405–455。
+        分岐点(470,268)と合流点(1250,268)はどちらも本線の中心線上にある。
+        描画順はピットレーン→本線とし、接合部を本線が覆って自然に見えるようにした。
+
+    ■ 引き出し線・矢じりの着地点の検算（先端が必ず対象の帯・箱の内側に落ちること）
+      (1) コースの注記   (1200,210) →(1200,250)  本線の帯 y=243–293 の内側。
+      (2) ピットに寄る道 (350,393)  →(550,349)   ピットレーンの分岐カーブ上。
+            カーブ M 470,268 C 545,268 555,430 630,430 を t=0.5 で評価：
+            x=(470+3*545+3*555+630)/8=4400/8=550
+            y=(268+3*268+3*430+430)/8=2792/8=349  → (550,349) は中心線そのもの。
+      (3) 制限速度      (560,500)  →(665,440)   制限速度区間の矩形 x=630–1090, y=405–455 の内側。
+            引き出し線が自身のラベル（x=590–990, y=489–516）に重ならないことも確認した。
+            x=590 の時点で線の y は 483 で、ラベル上端 489 より上を通る。
+      (4) タイヤ交換    (966,376)  →(966,412)   停止箱 x=948–1032, y=405–455 の内側。
+            箱の中の車（本体 962–1018, y=416–444）より上に落ちるため車と重ならない。
+
+    ■ 横方向の検算（和字1字=font-size と見積もる）
+      「コースは全速力で走れる」11字×22=242 → 中心1200で1079–1321。
+      「止まってタイヤ交換　2秒台」全角換算12.5字×22=275 → 中心966で829–1104。
+        合流カーブの帯（y=363付近で x=1137–1187）と 33px 空く。
+      「制限速度 時速80km ／ 市街地などでは60km」全角換算19字×21=399 → 中心790で590–990。
+      「この寄り道のぶん、必ず時間を失う」16字×26=416 → 中心800で592–1008。
+      凡例は 1150 から並べ、最右端 1488（右余白 112px）。
+      フッタ「F1のことば、あいうえお ／ 第5回「お」　オーバーカット」約25字×22=550 → 88–638。
+        右下の注記は 1137–1512 に置き、フッタと重ならない。
+
+    ■ 縦方向の座標
+      見出し 88 ／ 赤下線 118 ／ 前書き 158 ／ 凡例 141–158
+      コースの注記 198 ／ 本線 243–293 ／ 標識 331–379
+      タイヤ交換ラベル 362 ／ ピットレーン 405–455
+      制限速度ラベル 510 ／ 締めの言葉 566 ／ フッタ 618（下余白32px）
+
+    ■ 色の役割分担
+      #191B1F インク … 見出し・主文字・車
+      #5A5D64 グレー … 補助文字・進行方向の山形・道の縁
+      #D4342A 赤     … 時間を失う場所（制限速度区間・止まる場所）と締めの言葉
+      #0E8FA8 シアン … ピットへ寄る道であることの印（第5回の差し色。オーバーカットが
+                        「あとまで入らない」で避けている、まさにこの道を指す）
+      #DCDAD4 路面 ／ #F6F5F2 背景
+      色だけに頼らないため、時間を失う2か所には必ず文字のラベルを添え、
+      制限速度区間は斜線の模様でも区別している。
+
+    ■ 数値を書かない方針
+      合計で何秒失うかは一次出典で裏が取れないため書かない。
+      「この寄り道のぶん、必ず時間を失う」という言葉で締める。
+      本文で裏の取れている「時速80km／60km」「2秒台」だけを記す。
+
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ■ 影・ぼかしフィルタは使わない
+    ■ 実在チーム・ドライバー・コースは想起させない（架空の単純な形）
+    ============================================================
+  -->
+
+  <defs>
+    <!-- 制限速度で走る区間：赤の斜線（色だけに頼らないための模様） -->
+    <pattern id="slowZone" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="14" height="14" fill="#F7DAD7"/>
+      <rect x="0" y="0" width="5"  height="14" fill="#D4342A" fill-opacity="0.55"/>
+    </pattern>
+
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#D4342A"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0E8FA8"/>
+    </marker>
+    <marker id="arrowInk" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#191B1F"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="650" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">どこで時間を失うのか</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">コースをそのまま走る道と、ピットへ寄る道を比べます。</text>
+
+  <!-- ============ 凡例 ============ -->
+  <rect x="1150" y="141" width="26" height="16" fill="#DCDAD4" stroke="#5A5D64" stroke-width="1.5"/>
+  <text x="1184" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">コースの道</text>
+  <rect x="1314" y="141" width="26" height="16" fill="#DCDAD4" stroke="#0E8FA8" stroke-width="3"/>
+  <text x="1348" y="155" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#191B1F">ピットに寄る道</text>
+
+  <!-- ================================================================
+       ピットレーン（先に描き、接合部は本線で覆う）
+       ================================================================ -->
+  <path d="M 470,268 C 545,268 555,430 630,430 L 1090,430 C 1165,430 1175,268 1250,268"
+        fill="none" stroke="#0E8FA8" stroke-width="58" stroke-linecap="butt"/>
+  <path d="M 470,268 C 545,268 555,430 630,430 L 1090,430 C 1165,430 1175,268 1250,268"
+        fill="none" stroke="#DCDAD4" stroke-width="50" stroke-linecap="butt"/>
+  <path d="M 470,268 C 545,268 555,430 630,430 L 1090,430 C 1165,430 1175,268 1250,268"
+        fill="none" stroke="#F6F5F2" stroke-width="3" stroke-dasharray="18 16"/>
+
+  <!-- ================================================================
+       コース本線（あとに描いて接合部を覆う）
+       ================================================================ -->
+  <path d="M 120,390 C 120,300 176,268 236,268 L 1364,268 C 1424,268 1480,300 1480,390"
+        fill="none" stroke="#A9A6A0" stroke-width="54" stroke-linecap="butt"/>
+  <path d="M 120,390 C 120,300 176,268 236,268 L 1364,268 C 1424,268 1480,300 1480,390"
+        fill="none" stroke="#DCDAD4" stroke-width="50" stroke-linecap="butt"/>
+  <path d="M 120,390 C 120,300 176,268 236,268 L 1364,268 C 1424,268 1480,300 1480,390"
+        fill="none" stroke="#F6F5F2" stroke-width="4" stroke-dasharray="22 18"/>
+
+  <!-- 進行方向の山形（左から右へ） -->
+  <polyline points="290,258 304,268 290,278" fill="none" stroke="#5A5D64" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="380,258 394,268 380,278" fill="none" stroke="#5A5D64" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ================================================================
+       時間を失う場所 1：制限速度で走らなければならない区間
+       ピットレーン直線部（x=630–1090, y=405–455）にぴったり重ねる
+       ================================================================ -->
+  <rect x="630" y="405" width="460" height="50" fill="url(#slowZone)"/>
+  <rect x="630" y="405" width="460" height="50" fill="none" stroke="#D4342A" stroke-width="3"/>
+
+  <!-- 速度制限の標識（丸い標識と、区間へ下ろす短い足） -->
+  <line x1="700" y1="379" x2="700" y2="405" stroke="#D4342A" stroke-width="3"/>
+  <circle cx="700" cy="355" r="24" fill="#FFFFFF" stroke="#D4342A" stroke-width="7"/>
+  <text x="700" y="364" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#191B1F">80</text>
+
+  <!-- ================================================================
+       時間を失う場所 2：止まってタイヤ交換をする場所
+       ================================================================ -->
+  <rect x="950" y="407" width="80" height="46" fill="#FFFFFF" stroke="#D4342A" stroke-width="4"/>
+  <!-- 止まっている車（真上から見た形） -->
+  <rect x="962" y="416" width="56" height="28" rx="6" fill="#191B1F"/>
+  <circle cx="970"  cy="412" r="6" fill="#191B1F"/>
+  <circle cx="1010" cy="412" r="6" fill="#191B1F"/>
+  <circle cx="970"  cy="448" r="6" fill="#191B1F"/>
+  <circle cx="1010" cy="448" r="6" fill="#191B1F"/>
+
+  <!-- ================================================================
+       コース側：そのまま全速力で走る車（止まっている車の真上に置いて比べる）
+       ================================================================ -->
+  <line x1="886" y1="256" x2="946" y2="256" stroke="#191B1F" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+  <line x1="880" y1="268" x2="946" y2="268" stroke="#191B1F" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+  <line x1="886" y1="280" x2="946" y2="280" stroke="#191B1F" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+  <rect x="956" y="254" width="62" height="28" rx="6" fill="#191B1F"/>
+  <circle cx="964"  cy="250" r="6" fill="#191B1F"/>
+  <circle cx="1010" cy="250" r="6" fill="#191B1F"/>
+  <circle cx="964"  cy="286" r="6" fill="#191B1F"/>
+  <circle cx="1010" cy="286" r="6" fill="#191B1F"/>
+
+  <!-- ============ ラベル(1) コース側の対比 ============ -->
+  <text x="1200" y="198" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F">コースは全速力で走れる</text>
+  <line x1="1200" y1="210" x2="1200" y2="250" stroke="#191B1F" stroke-width="3" marker-end="url(#arrowInk)"/>
+
+  <!-- ============ ラベル(2) ピットに寄る道 ============ -->
+  <text x="190" y="400" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#0E8FA8">ピットに寄る道</text>
+  <text x="190" y="424" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#5A5D64">コースからはずれて、また戻る</text>
+  <line x1="350" y1="393" x2="550" y2="349" stroke="#0E8FA8" stroke-width="3" marker-end="url(#arrowCyan)"/>
+  <circle cx="550" cy="349" r="4" fill="#0E8FA8"/>
+
+  <!-- ============ ラベル(3) 制限速度の区間 ============ -->
+  <text x="790" y="510" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="21" font-weight="700" fill="#D4342A">制限速度 時速80km ／ 市街地などでは60km</text>
+  <line x1="560" y1="500" x2="665" y2="440" stroke="#D4342A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <circle cx="665" cy="440" r="4" fill="#D4342A"/>
+
+  <!-- ============ ラベル(4) 止まってタイヤ交換 ============ -->
+  <text x="966" y="362" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#D4342A">止まってタイヤ交換　2秒台</text>
+  <line x1="966" y1="376" x2="966" y2="412" stroke="#D4342A" stroke-width="3" marker-end="url(#arrowRed)"/>
+
+  <!-- ============ 締めの言葉 ============ -->
+  <text x="800" y="566" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#D4342A">この寄り道のぶん、必ず時間を失う</text>
+
+  <!-- ============ フッタ・注記 ============ -->
+  <text x="88" y="618" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第5回「お」　オーバーカット</text>
+  <text x="1512" y="618" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64">※ 架空の模式図です。実際のコースの形とはちがいます。</text>
+</svg>
