@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">F1のことば、あいうえお 第6回「か カーボンブレーキ」</title>
+  <desc id="desc">深いエスプレッソブラウンの背景に、赤みのあるアンバーオレンジを差し色にした茶色のフォーミュラカーのシルエット。ホイールは赤熱したブレーキを思わせるアンバーオレンジ。左上に連載タイトル、その下に大きく「か カーボンブレーキ」。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」ヒーロー画像 原本
+    第6回 「か」＝カーボンブレーキ
+    画寸 1600 x 900
+
+    ■ フォント指定の方針（重要）
+      日本語は 'Yu Gothic','Meiryo',sans-serif。
+      CSSクラス／CSS継承には頼らず、<text> 要素ごとに font-family 属性を直接書く。
+      font-size / font-weight / letter-spacing / fill も同様に属性で書く。
+
+    ■ 次回以降の流用手順（差し替えるのはこの2種だけ）
+      A) 文字
+         text#seriesNo … 「第6回」
+         text#kana     … 「か」
+         text#word     … 「カーボンブレーキ」（8文字。font-size 95、letter-spacing 5.7 のまま。
+                          右端の見積もり 295＋95×8＋5.7×7＝1094.9。x=1520 以内、横罫の右端1100とほぼ揃う）
+      B) 色（この回で使っている値。全置換すれば回替えできる）
+         配色名      エスプレッソ × エンバーアンバー（赤熱した円盤の色）
+         アクセント  #E8672E（見出し・かな・差し色。濃淡違いに #F4925E #B0431A #F9C4A3）
+         インク      #FFFFFF（第N回・語のカタカナ・横罫・速度線）
+         背景        #3A2B23 → #271C16 → #120C09
+         車体ブラウン #6E5547 #4B382E #735A4B #523D32 #664E41 #574236 #35271F #120C09 #0C0806
+         タイヤ      #2E2825 #231E1B #62574F #171210
+         ヘルメット  #F3ECE4
+      ※ 明るい背景の回はインクを濃く、暗い背景の回は #FFFFFF に戻すこと。
+         第6回は暗背景のためインクを #FFFFFF のままとした。
+      ※ 第4回（バーガンディ #4A1628 × ゴールド #D8A83E）と見分けるため、
+         背景は赤紫ではなく茶（色相およそ22度）、差し色は黄寄りの金ではなく
+         赤寄りのアンバー（色相およそ18度）にした。
+      ※ ヘルメット地は、茶の車体とアンバーに調和する温かい白 #F3ECE4。
+      ※ 車体とタイヤが溶けないよう、車体側を背景より明るい茶に持ち上げ、
+         タイヤは暗いこげ茶に留めた。タイヤ肩のハイライト #62574F で輪郭を立てる。
+    ■ 構図は第3回の原本を複製したもの。座標は動かさないこと。
+    ■ 実在チームのカラーリング・ロゴ・ドライバー・コースは模さない（架空ライバリー）。
+    ■ 影は filter ではなく radialGradient で作る（環境差を避けるため）。
+    ============================================================
+  -->
+
+  <defs>
+    <!-- 背景：上が明るく下がわずかに沈む縦グラデーション -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#3A2B23"/>
+      <stop offset="0.55" stop-color="#271C16"/>
+      <stop offset="1"    stop-color="#120C09"/>
+    </linearGradient>
+
+    <!-- 車体：エスプレッソ（背景より明るい茶。タイヤと溶けないよう一段持ち上げてある） -->
+    <linearGradient id="bodyGrad" x1="0" y1="520" x2="0" y2="750" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E5547"/>
+      <stop offset="1" stop-color="#4B382E"/>
+    </linearGradient>
+    <linearGradient id="sidepodGrad" x1="0" y1="630" x2="0" y2="730" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#735A4B"/>
+      <stop offset="1" stop-color="#523D32"/>
+    </linearGradient>
+    <linearGradient id="wingGrad" x1="0" y1="470" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#664E41"/>
+      <stop offset="1" stop-color="#4B382E"/>
+    </linearGradient>
+
+    <!-- タイヤ：車体より一段暗いこげ茶（肩のハイライトで背景から輪郭を立てる） -->
+    <linearGradient id="tyreGrad" x1="0" y1="-88" x2="0" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2E2825"/>
+      <stop offset="1" stop-color="#231E1B"/>
+    </linearGradient>
+    <!-- ホイール円板：アクセント（赤熱したブレーキ円盤を思わせる色） -->
+    <linearGradient id="rimGrad" x1="-38" y1="-38" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#F4925E"/>
+      <stop offset="0.5" stop-color="#E8672E"/>
+      <stop offset="1"   stop-color="#B0431A"/>
+    </linearGradient>
+
+    <!-- 接地影：ぼかしの代わりに放射グラデーションで作る（フィルタ非依存） -->
+    <radialGradient id="shadowGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#000000" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <clipPath id="helmetClip">
+      <circle cx="744" cy="582" r="25"/>
+    </clipPath>
+
+    <!-- タイヤ＋ホイール（原点中心・外径88）。前後で use して使い回す -->
+    <g id="wheel">
+      <circle r="88" fill="url(#tyreGrad)"/>
+      <!-- 上面〜左肩のハイライト（第1回・第2回にある明るい円弧） -->
+      <path d="M -73.4,-15.6 A 75 75 0 0 1 23.2,-71.3"
+            fill="none" stroke="#62574F" stroke-width="24" opacity="0.85"/>
+      <circle r="57" fill="#171210"/>
+      <circle r="53" fill="url(#rimGrad)"/>
+      <path d="M 0,-53 A 53 53 0 0 1 37.5,-37.5 L 0,0 Z" fill="#F9C4A3" opacity="0.45"/>
+      <circle r="13" fill="#120C09"/>
+      <path d="M -2,-7 L -27,15 L 4,6 Z" fill="#120C09"/>
+    </g>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- ============ 見出し ============ -->
+  <!-- letter-spacing は em を px に換算して絶対値で書く（0.30em×30px=9 / 0.04em×26px=1.04 / 0.06em×95px=5.7） -->
+  <text x="107" y="115" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="400" letter-spacing="9" fill="#E8672E">Ｆ１のことば、あいうえお</text>
+  <text id="seriesNo" x="110" y="175" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="400" letter-spacing="1.04" fill="#FFFFFF" fill-opacity="0.88">第6回</text>
+  <text id="kana" x="115" y="310" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="150" font-weight="700" fill="#E8672E">か</text>
+  <text id="word" x="295" y="310" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="95" font-weight="700" letter-spacing="5.7" fill="#FFFFFF">カーボンブレーキ</text>
+
+  <!-- 見出しと図版を分ける横罫 -->
+  <line x1="105" y1="355" x2="1100" y2="355" stroke="#FFFFFF" stroke-opacity="0.30" stroke-width="1.5"/>
+
+  <!-- 左端の速度線 -->
+  <line x1="10" y1="432" x2="335" y2="432" stroke="#E8672E" stroke-opacity="0.28" stroke-width="2.5"/>
+  <line x1="0"  y1="518" x2="305" y2="518" stroke="#FFFFFF" stroke-opacity="0.20" stroke-width="2.5"/>
+
+  <!-- ============ 車両 ============ -->
+  <g id="car">
+
+    <!-- 接地影 -->
+    <ellipse cx="770" cy="792" rx="700" ry="26" fill="url(#shadowGrad)"/>
+
+    <!-- リアウイング（上下2枚＋2本の支柱＋エンドプレート） -->
+    <g id="rearWing">
+      <rect x="1236" y="484" width="214" height="21" rx="3" fill="url(#wingGrad)"/>
+      <rect x="1236" y="484" width="214" height="6"  rx="2" fill="#E8672E"/>
+      <rect x="1300" y="503" width="15"  height="92" fill="#574236"/>
+      <rect x="1372" y="503" width="15"  height="92" fill="#574236"/>
+      <rect x="1288" y="600" width="16"  height="62" fill="#574236"/>
+      <rect x="1292" y="592" width="130" height="20" rx="3" fill="url(#wingGrad)"/>
+      <rect x="1418" y="482" width="32"  height="142" rx="3" fill="url(#wingGrad)"/>
+    </g>
+
+    <!-- フロントウイング（多段の板＋アクセント色のライン） -->
+    <g id="frontWing">
+      <rect x="44"  y="706" width="15"  height="70" rx="2" fill="#574236"/>
+      <path d="M 59,716 L 240,716 L 240,731 L 59,735 Z" fill="url(#bodyGrad)"/>
+      <path d="M 59,742 L 284,742 L 284,758 L 59,762 Z" fill="url(#bodyGrad)"/>
+      <rect x="63"  y="760" width="214" height="10" rx="2" fill="#E8672E"/>
+      <rect x="18"  y="772" width="272" height="6"  rx="2" fill="#4B382E" opacity="0.85"/>
+    </g>
+
+    <!-- 車体本体：ノーズ〜モノコック〜エンジンカバー〜リアエンド -->
+    <path id="bodyShell"
+          d="M 178,714
+             L 466,648
+             L 636,600
+             L 664,590
+             C 676,568 708,557 748,556
+             L 806,552
+             L 816,536
+             L 912,532
+             L 924,566
+             L 1010,588
+             L 1120,618
+             L 1210,640
+             L 1300,658
+             L 1300,722
+             L 500,722
+             L 178,742 Z"
+          fill="url(#bodyGrad)"/>
+
+    <!-- サイドポッド -->
+    <path d="M 800,650 C 858,634 1004,642 1122,660 L 1162,702 L 1162,722 L 800,722 Z"
+          fill="url(#sidepodGrad)"/>
+    <!-- サイドポッド前端の稜線 -->
+    <line x1="822" y1="650" x2="822" y2="712" stroke="#0C0806" stroke-opacity="0.5" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- フロア（車体下端に密着させる。隙間を作らない） -->
+    <rect x="500" y="720" width="800" height="24" fill="#35271F"/>
+    <!-- フロア際のアクセントライン -->
+    <rect x="505" y="722" width="600" height="8" rx="2" fill="#E8672E" opacity="0.85"/>
+    <!-- サイドポッドからノーズへ走るアクセント色のライン -->
+    <path d="M 1110,632 C 950,648 800,657 640,677 C 470,699 300,721 176,737"
+          fill="none" stroke="#E8672E" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- コクピット開口 -->
+    <ellipse cx="745" cy="598" rx="62" ry="17" fill="#0C0806"/>
+
+    <!-- ヘイロー（頭上の輪郭線） -->
+    <path d="M 660,628 C 655,588 690,557 748,553 C 812,549 862,563 884,585"
+          fill="none" stroke="#120C09" stroke-width="9" stroke-linecap="round"/>
+    <path d="M 884,585 L 896,608"
+          fill="none" stroke="#120C09" stroke-width="9" stroke-linecap="round"/>
+
+    <!-- ヘルメット（温かい白＋アクセント色のバイザー帯）
+         地は #F3ECE4。茶の車体とアンバーの差し色に調和する、わずかに温かい白を使っている。 -->
+    <g id="helmet">
+      <circle cx="744" cy="582" r="25" fill="#F3ECE4"/>
+      <g clip-path="url(#helmetClip)">
+        <rect x="717" y="555" width="54" height="23" fill="#E8672E"/>
+        <rect x="717" y="578" width="54" height="9"  fill="#120C09"/>
+      </g>
+    </g>
+
+    <!-- 前後タイヤ -->
+    <use href="#wheel" xlink:href="#wheel" transform="translate(412,656)"/>
+    <use href="#wheel" xlink:href="#wheel" transform="translate(1206,656) scale(1.022)"/>
+  </g>
+</svg>

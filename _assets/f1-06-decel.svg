@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">2.38秒で、時速332kmから95kmへ</title>
+  <desc id="desc">1回のブレーキングで速さがどう落ちるかを示した図。横が時間、縦が速さ。左端の0秒の位置に時速332kmの高い棒、右の2.38秒の位置に時速95kmの低い棒を立て、そのあいだを点線と薄い帯で結んでいる。点線は途中の落ち方を単純化したもので、実測ではない。右上の囲みに、体にかかる力は最大5.6G、体重の5.6倍の力が前向きにかかると記している。出典として、2021年アメリカGP・12コーナーの例（ブレーキメーカー発表）と小さく添えている。コース図は描いていない。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第6回 解説図2（decel）
+    「2.38秒で、時速332kmから95kmへ」 1600 x 700
+
+    ■ この図の主張（比較・範囲）
+      「たった2.38秒」という短い時間の中で、速さが332から95まで落ちる落差を、
+      棒の高さの差と、時間軸上の狭い範囲で見せる。
+      途中の値は発表されていないため書かない。始点と終点の2本の棒だけを実寸比で立て、
+      あいだは点線＋薄い帯で結ぶだけにした（右下の注記で「単純化」と明記）。
+
+    ■ 座標の対応
+      時間（横）：t=0 → x=360、t=2.38秒 → x=1160（800px）。軸は x=270–1300。
+      速さ（縦）：y = 580 − 0.9 × 時速。軸（速さ0）は y=580。
+        時速332km → y = 580 − 298.8 = 281.2（281 とした）
+        時速95km  → y = 580 − 85.5  = 494.5
+      棒の幅60：始点 x 330–390（中心360）、終点 x 1130–1190（中心1160）。
+      点線：(360,281) → (1160,494.5)。棒より先に描き、両端は棒の上端中央に一致させる。
+      帯：(360,281)(1160,494.5)(1160,580)(360,580)。
+
+    ■ 数字の置き場所（重なりの検算。和字1字=font-size、半角=0.55字で見積もる）
+      「ブレーキ直前」18px 6字=108 → 中心360で306–414、y 219–237。
+      「時速332km」28px 約4.8字=134 → 中心360で293–427、y 241–265。棒の上端281より上。
+        縦軸は x=270 に置き、この文字と重ならないようにした。
+      「速さ」20px → 218–258（右寄せ x=258）、y 230–248。
+      「減速し終えたとき」18px 8字=144 → 1206–1350、y 482–500。
+      「時速95km」28px 約4.2字=118 → 1206–1324、y 508–532。
+        終点の棒の右側に置き、点線（x=1103 付近で y≈479）とぶつからないようにした。
+      Gの囲み x 820–1260, y 190–286。点線は x=820 で y≈404 なので囲みの下を通る。
+      目盛り文字 y=610：「0秒」360中心、「ブレーキを踏んでいる時間」760中心（652–868）、
+        「2.38秒」1160中心（26px 約3.8字 → 1111–1209）。
+      出典 16px 約30字=480 → 1032–1512、y=158。前書き（88–約620）と重ならない。
+      フッタ y=668（下余白32px）。右下注記 15px 約31字 → 1047–1512。
+
+    ■ 色の役割分担
+      #191B1F インク … 見出し・主文字・速さの棒
+      #5A5D64 グレー … 補助文字・軸
+      #D4342A 赤     … 見出しの下線、「2.38秒」、Gの囲み
+      #B0431A ／ #F4DDD0 … 減速している区間（第6回の差し色エンバーアンバーの濃淡）
+      色だけに頼らないため、棒には必ず数字と「直前／終えたとき」の言葉を添えている。
+
+    ■ 数値：332 / 95 / 2.38 / 5.6 だけ。途中の値・差し引きの値は書かない。
+    ■ 実在コースのレイアウトは描かない。出典として名前を小さく添えるだけ。
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ■ 影・ぼかしフィルタは使わない
+    ============================================================
+  -->
+
+  <defs>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5A5D64"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="700" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">2.38秒で、時速332kmから95kmへ</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">1回のブレーキングで、速さがどれだけ落ちるか。</text>
+  <text x="1512" y="158" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="16" font-weight="400" fill="#5A5D64">2021年アメリカGP・12コーナーの例（ブレーキメーカー発表）</text>
+
+  <!-- ============ 減速している区間（帯と点線。途中は単純化） ============ -->
+  <polygon points="360,281 1160,494.5 1160,580 360,580" fill="#F4DDD0"/>
+  <line x1="360" y1="281" x2="1160" y2="494.5" stroke="#B0431A" stroke-width="3" stroke-dasharray="10 8"/>
+
+  <!-- ============ 軸 ============ -->
+  <line x1="270" y1="580" x2="1300" y2="580" stroke="#5A5D64" stroke-width="2.5" marker-end="url(#arrowGray)"/>
+  <text x="1310" y="587" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">時間</text>
+  <line x1="270" y1="580" x2="270" y2="236" stroke="#5A5D64" stroke-width="2.5" marker-end="url(#arrowGray)"/>
+  <text x="258" y="248" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#5A5D64">速さ</text>
+
+  <!-- 目盛り -->
+  <line x1="360"  y1="580" x2="360"  y2="592" stroke="#5A5D64" stroke-width="2.5"/>
+  <line x1="1160" y1="580" x2="1160" y2="592" stroke="#5A5D64" stroke-width="2.5"/>
+  <text x="360"  y="614" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="400" fill="#5A5D64">0秒</text>
+  <text x="760"  y="614" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">ブレーキを踏んでいる時間</text>
+  <text x="1160" y="616" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#D4342A">2.38秒</text>
+
+  <!-- ============ 速さの棒（高さは実寸比） ============ -->
+  <!-- 始点：時速332km -->
+  <rect x="330" y="281" width="60" height="299" fill="#191B1F"/>
+  <text x="360" y="237" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">ブレーキ直前</text>
+  <text x="360" y="265" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">時速332km</text>
+
+  <!-- 終点：時速95km -->
+  <rect x="1130" y="494.5" width="60" height="85.5" fill="#191B1F"/>
+  <text x="1206" y="500" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">減速し終えたとき</text>
+  <text x="1206" y="532" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">時速95km</text>
+
+  <!-- ============ 体にかかる力 ============ -->
+  <rect x="820" y="190" width="440" height="96" rx="6" fill="#FFFFFF" stroke="#D4342A" stroke-width="2.5"/>
+  <text x="844" y="232" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#D4342A">体にかかる力は　最大5.6G</text>
+  <text x="844" y="268" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="19" font-weight="400" fill="#191B1F">体重の5.6倍の力が、前向きにかかる</text>
+
+  <!-- ============ フッタ・注記 ============ -->
+  <text x="88" y="668" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第6回「か」　カーボンブレーキ</text>
+  <text x="1512" y="668" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64">※ 数字は始まりと終わりだけ。あいだの点線は、落ち方を単純化したものです。</text>
+</svg>

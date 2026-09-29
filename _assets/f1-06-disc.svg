@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 740" width="1600" height="740" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">ホイールの内側にあるブレーキ</title>
+  <desc id="desc">ホイールの内側を横から見た模式図。黒いタイヤの内側に、オレンジから赤に光る円盤（ディスク）がある。円盤には細い冷却穴を表す点が並び、右上には円盤をはさむ部品（キャリパー）がかぶさっている。左下には風を取り込む口（ブレーキダクト）があり、左から風が入る矢印を描いている。右側の囲みでは、はさむ部分を上から見たところを示し、円盤の両側にパッドがあって、キャリパーが両側から押しつけてはさむ様子を描いている。数値は「1枚に1,050個ほど」「1,000度を超えることも」だけを記している。</desc>
+
+  <!--
+    ============================================================
+    週刊F1用語コラム「F1のことば、あいうえお」第6回 解説図1（disc）
+    「ホイールの内側にあるブレーキ」 1600 x 740
+
+    ■ この図の主張（位置関係）
+      本文の「回る円盤を両側からパッドではさむ」「細い穴」「風を取り込む口」が、
+      ホイールの内側でどこにどう並んでいるかを、場所として示す。
+      左＝横から見た全体、右の囲み＝はさむ部分を上から見た拡大。
+      パッドは横から見るとキャリパーに隠れて見えないため、上から見た図で
+      「両側からはさむ」関係を見せる。
+
+    ■ 主図の座標（中心 C=(470,430)）
+      タイヤ       r=240（x 230–710, y 190–670）
+      リム（車輪） r=178
+      円盤         r=140（x 330–610, y 290–570）
+      ハブ         r=58 ／ 中央ナット r=22
+      冷却穴の点   r=90（0°+10°刻み）／ r≈107（3.33°+10°刻み）／ r≈124（6.67°+10°刻み）
+                   1本分（3点）を #holeSpoke とし、rotate(10k) で36本並べる（計108点）。
+                   あくまで象徴。実物の穴の数・並びではない（右下注記で明記）。
+      キャリパー   中心Cまわりの扇形。角度 -70°〜-20°（SVGの角度・時計回り正）、半径 92〜160。
+                   外周 P1(524.72,279.65) → P2(620.35,375.28)
+                   内周 Q2(556.45,398.54) → Q1(501.46,343.55)
+                   円盤の縁（r=140）をまたいで外へ出しており「縁をはさむ」形にしている。
+      ブレーキダクト 通り道 (268,478)(390,500)(390,540)(268,578)、口の楕円 中心(268,528) rx14 ry50
+
+    ■ 引き出し線の先端の検算（先端が必ず対象の上に落ちること）
+      (1) キャリパー   (778,243) → (559.1,340.9)
+            中心Cから角度 -45°、半径126。扇形（-70°〜-20°, r 92〜160）の内側。
+      (2) 円盤         (778,393) → (604,430)
+            中心Cから角度 0°、半径134。冷却穴の点（最大 r≈126.6）より外、円盤の縁 r=140 より内。
+            点のない無地の帯に落ちる。
+      (3) 冷却穴       (778,533) → (563.08,520.66)（線はここで止め、輪で点を囲む）
+            囲む点の中心は (555.09,520.20)。#holeSpoke の r≈124 の点を rotate(40) したもの。
+              x = 470 + 123.16·cos40° − 14.40·sin40° = 470 + 94.35 − 9.26 = 555.09
+              y = 430 + 123.16·sin40° + 14.40·cos40° = 430 + 79.17 + 11.03 = 520.20
+            囲みの輪 r=8。線の終点は輪の周上（点の中心から引き出し線方向へ8px）。
+      (4) ブレーキダクト (200,602) → (266,562)
+            口の楕円 中心(268,528) rx14 ry50 の内側（y=562 で x 257.7–278.3）。
+            始点(200,602)はタイヤ（中心から320px）の外。
+      右の囲み（上から見た図）
+      (5) キャリパー   (1262,336) → (1300,362)  橋の部分 x 1290–1402, y 350–370 の内側
+      (6) パッド       (1236,538) → (1326,478)  左パッド x 1318–1334, y 385–485 の内側。
+            途中、左の本体（x 1290–1316, y 380–460）の下を通る（x=1316 で y≈484.7）。
+      (7) 円盤         (1382,542) → (1350,532)  円盤 x 1336–1356, y 300–560 の内側
+
+      引き出し線は、暗いタイヤの上でも見えるよう、背景色の太い下敷き線（7px）の上に
+      インクの線（2.5px）を重ねている。
+
+    ■ 引き出し線どうしが交わらないことの確認
+      右の3本は、始点の上下順（243 / 393 / 533）と、x=604 での y（≈322 / 430 / ≈523）の
+      上下順が一致するため交わらない。
+
+    ■ 横方向の検算（和字1字=font-size と見積もる）
+      右のラベル列 x=790 から。最長「熱くなるとオレンジ〜赤に光る」14字×18=252 → 790–1042。
+        右の囲み（x 1180–1512）まで138px空く。
+      囲みの中の副題「パッドが円盤を両側からはさむ」14字×17=238 → 1200–1438。
+      左下「（ブレーキダクト）」9字×18=162 → 88–250。y=650 でタイヤ左端は x≈374。
+      風の矢印は x=238 で止める（y=508/528/548 でのタイヤ左端 243/251/261 より手前）。
+      フッタ 約28字×22 → 88–約690。右下注記 約27字×15=405 → 1107–1512。
+
+    ■ 縦方向の座標
+      見出し 88 ／ 赤下線 118 ／ 前書き 158 ／ 図 190–670
+      右ラベル 250・278 ／ 400・428・454・480 ／ 540・568・594
+      右の囲み 200–600 ／ 左下ラベル 622・650 ／ フッタ 708（下余白32px）
+
+    ■ 色の役割分担
+      #191B1F インク … 見出し・主文字・引き出し線・冷却穴の点
+      #5A5D64 グレー … 補助文字・風の矢印・キャリパー
+      #D4342A 赤     … 見出しの下線、はさむ力の向きの矢印
+      #E8672E ほか   … 熱くなった円盤（第6回の差し色エンバーアンバー。#F4925E #B0431A #C2471F）
+      色だけに頼らないため、円盤が光ることは「熱くなるとオレンジ〜赤に光る」と文字でも書いている。
+
+    ■ 数値：「1,000個以上」「1,000度を超えることも」以外は書かない。
+    ■ フォント：<text> 要素ごとに font-family 属性を直接書く（CSS継承に頼らない）
+    ■ 影・ぼかしフィルタは使わない
+    ■ 実在チームのカラーリング・ロゴは模さない（部品は無彩色のグレーで描く）
+    ============================================================
+  -->
+
+  <defs>
+    <!-- 熱くなった円盤：中心側は黒い炭素、外側ほどオレンジ〜赤に光る -->
+    <radialGradient id="discHot" cx="470" cy="430" r="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#2E2826"/>
+      <stop offset="0.45" stop-color="#2E2826"/>
+      <stop offset="0.56" stop-color="#9E3A1C"/>
+      <stop offset="0.72" stop-color="#E8672E"/>
+      <stop offset="0.86" stop-color="#F4925E"/>
+      <stop offset="1"    stop-color="#C2471F"/>
+    </radialGradient>
+
+    <!-- 上から見た円盤（縦長の帯）：芯は暗く、表面が光る -->
+    <linearGradient id="discEdge" x1="1336" y1="0" x2="1356" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#E8672E"/>
+      <stop offset="0.5" stop-color="#C2471F"/>
+      <stop offset="1"   stop-color="#E8672E"/>
+    </linearGradient>
+
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5A5D64"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#D4342A"/>
+    </marker>
+
+    <!-- 冷却穴の点 1本分（原点中心。rotate で並べる） -->
+    <g id="holeSpoke">
+      <circle cx="90"     cy="0"     r="2.6" fill="#191B1F"/>
+      <circle cx="106.82" cy="6.22"  r="2.6" fill="#191B1F"/>
+      <circle cx="123.16" cy="14.40" r="2.6" fill="#191B1F"/>
+    </g>
+  </defs>
+
+  <!-- ============ 背景 ============ -->
+  <rect x="0" y="0" width="1600" height="740" fill="#F6F5F2"/>
+
+  <!-- ============ 見出し ============ -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">ホイールの内側にあるブレーキ</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">ホイールの内側を横から見た模式図です。右の囲みは、はさむ部分を上から見たところ。</text>
+
+  <!-- ================================================================
+       主図：横から見たホイールの内側（中心 470,430）
+       ================================================================ -->
+  <!-- タイヤ -->
+  <circle cx="470" cy="430" r="240" fill="#2F3034"/>
+  <!-- リム（車輪） -->
+  <circle cx="470" cy="430" r="178" fill="#CFCCC5" stroke="#8A8D93" stroke-width="3"/>
+
+  <!-- 円盤（ディスク） -->
+  <circle cx="470" cy="430" r="140" fill="url(#discHot)" stroke="#191B1F" stroke-width="2"/>
+
+  <!-- 冷却穴（象徴。10°刻みで36本×3点） -->
+  <g id="holes">
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(0)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(10)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(20)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(30)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(40)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(50)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(60)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(70)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(80)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(90)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(100)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(110)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(120)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(130)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(140)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(150)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(160)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(170)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(180)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(190)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(200)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(210)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(220)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(230)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(240)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(250)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(260)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(270)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(280)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(290)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(300)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(310)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(320)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(330)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(340)"/>
+    <use href="#holeSpoke" xlink:href="#holeSpoke" transform="translate(470,430) rotate(350)"/>
+  </g>
+
+  <!-- ハブ（車軸まわり） -->
+  <circle cx="470" cy="430" r="58" fill="#8A8D93" stroke="#5A5D64" stroke-width="2"/>
+  <circle cx="470" cy="430" r="22" fill="#191B1F"/>
+
+  <!-- キャリパー（はさむ部品）：円盤の縁をまたぐ扇形 -->
+  <path d="M 524.72,279.65 A 160 160 0 0 1 620.35,375.28 L 556.45,398.54 A 92 92 0 0 0 501.46,343.55 Z"
+        fill="#5A5D64" stroke="#191B1F" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- ブレーキダクト（風を取り込む口と、円盤へ向かう通り道） -->
+  <path d="M 268,478 L 390,500 L 390,540 L 268,578 Z" fill="#A9A6A0" stroke="#5A5D64" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="268" cy="528" rx="14" ry="50" fill="#191B1F" stroke="#5A5D64" stroke-width="3"/>
+
+  <!-- 風の矢印（タイヤの手前で止める） -->
+  <text x="150" y="494" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#5A5D64">風</text>
+  <line x1="100" y1="508" x2="238" y2="508" stroke="#5A5D64" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="100" y1="528" x2="238" y2="528" stroke="#5A5D64" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="100" y1="548" x2="238" y2="548" stroke="#5A5D64" stroke-width="3" marker-end="url(#arrowGray)"/>
+
+  <!-- ================================================================
+       引き出し線（背景色の下敷き＋インクの線）
+       ================================================================ -->
+  <!-- (1) キャリパー -->
+  <line x1="778" y1="243" x2="559.1" y2="340.9" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="778" y1="243" x2="559.1" y2="340.9" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="559.1" cy="340.9" r="4.5" fill="#191B1F" stroke="#F6F5F2" stroke-width="1.5"/>
+
+  <!-- (2) 円盤 -->
+  <line x1="778" y1="393" x2="604" y2="430" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="778" y1="393" x2="604" y2="430" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="604" cy="430" r="4.5" fill="#191B1F" stroke="#F6F5F2" stroke-width="1.5"/>
+
+  <!-- (3) 冷却穴（点を輪で囲み、線は輪の周で止める） -->
+  <line x1="778" y1="533" x2="563.08" y2="520.66" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="778" y1="533" x2="563.08" y2="520.66" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="555.09" cy="520.20" r="8" fill="none" stroke="#F6F5F2" stroke-width="5"/>
+  <circle cx="555.09" cy="520.20" r="8" fill="none" stroke="#191B1F" stroke-width="2.5"/>
+
+  <!-- (4) ブレーキダクト -->
+  <line x1="200" y1="602" x2="266" y2="562" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="200" y1="602" x2="266" y2="562" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="266" cy="562" r="4.5" fill="#F6F5F2" stroke="#191B1F" stroke-width="2"/>
+
+  <!-- ============ 右のラベル列 ============ -->
+  <text x="790" y="250" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F">はさむ部品（キャリパー）</text>
+  <text x="790" y="278" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">中にパッドが入っている</text>
+
+  <text x="790" y="400" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F">円盤（ディスク）</text>
+  <text x="790" y="428" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">車輪といっしょに回る</text>
+  <text x="790" y="454" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="700" fill="#B0431A">熱くなるとオレンジ〜赤に光る</text>
+  <text x="790" y="480" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#B0431A">（1,000度を超えることも）</text>
+
+  <text x="790" y="540" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F">細い冷却穴</text>
+  <text x="790" y="568" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">1枚に1,050個ほど</text>
+  <text x="790" y="594" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">（図では点で表しています）</text>
+
+  <!-- ============ 左下のラベル ============ -->
+  <text x="88" y="626" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F">風を取り込む口</text>
+  <text x="88" y="652" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">（ブレーキダクト）</text>
+
+  <!-- ================================================================
+       右の囲み：はさむ部分を上から見たところ
+       ================================================================ -->
+  <rect x="1180" y="200" width="332" height="400" rx="6" fill="#FFFFFF" stroke="#A9A6A0" stroke-width="2"/>
+  <text x="1200" y="236" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="20" font-weight="700" fill="#191B1F">上から見ると</text>
+  <text x="1200" y="262" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="17" font-weight="400" fill="#5A5D64">パッドが円盤を両側からはさむ</text>
+
+  <!-- 円盤（縁を上から見た帯） -->
+  <rect x="1336" y="300" width="20" height="260" fill="url(#discEdge)" stroke="#191B1F" stroke-width="1.5"/>
+  <!-- パッド（両側に1枚ずつ） -->
+  <rect x="1318" y="385" width="16" height="100" fill="#3A3A3E" stroke="#191B1F" stroke-width="1.5"/>
+  <rect x="1358" y="385" width="16" height="100" fill="#3A3A3E" stroke="#191B1F" stroke-width="1.5"/>
+  <!-- キャリパー：左右の本体と、円盤の上をまたぐ橋 -->
+  <rect x="1290" y="380" width="26"  height="80" fill="#5A5D64" stroke="#191B1F" stroke-width="2"/>
+  <rect x="1376" y="380" width="26"  height="80" fill="#5A5D64" stroke="#191B1F" stroke-width="2"/>
+  <rect x="1290" y="350" width="112" height="30" fill="#5A5D64" stroke="#191B1F" stroke-width="2"/>
+
+  <!-- はさむ力の向き -->
+  <line x1="1246" y1="420" x2="1287" y2="420" stroke="#D4342A" stroke-width="4" marker-end="url(#arrowRed)"/>
+  <line x1="1446" y1="420" x2="1405" y2="420" stroke="#D4342A" stroke-width="4" marker-end="url(#arrowRed)"/>
+
+  <!-- (5) キャリパー -->
+  <text x="1200" y="332" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="700" fill="#191B1F">キャリパー</text>
+  <line x1="1262" y1="338" x2="1300" y2="362" stroke="#191B1F" stroke-width="2"/>
+  <circle cx="1300" cy="362" r="3.5" fill="#191B1F" stroke="#FFFFFF" stroke-width="1.2"/>
+
+  <!-- (6) パッド -->
+  <text x="1200" y="560" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="700" fill="#191B1F">パッド</text>
+  <line x1="1236" y1="538" x2="1326" y2="478" stroke="#191B1F" stroke-width="2"/>
+  <circle cx="1326" cy="478" r="3.5" fill="#FFFFFF" stroke="#191B1F" stroke-width="1.5"/>
+
+  <!-- (7) 円盤 -->
+  <text x="1388" y="560" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="700" fill="#191B1F">円盤</text>
+  <line x1="1382" y1="542" x2="1350" y2="532" stroke="#191B1F" stroke-width="2"/>
+  <circle cx="1350" cy="532" r="3.5" fill="#191B1F" stroke="#FFFFFF" stroke-width="1.2"/>
+
+  <!-- ============ フッタ・注記 ============ -->
+  <text x="88" y="708" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第6回「か」　カーボンブレーキ</text>
+  <text x="1512" y="708" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64">※ 架空の模式図です。実物の形や穴の数・並びとはちがいます。</text>
+</svg>
