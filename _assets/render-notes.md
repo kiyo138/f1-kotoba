@@ -63,3 +63,4 @@ python -c "from PIL import Image;print(Image.open(r'...png').size)"
 | う | オフホワイト × コバルトブルー |
 | え | バーガンディ × ゴールド |
 | お | マットブラック × シアン |
+| か | エスプレッソ × アンバー |
