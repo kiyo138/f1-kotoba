@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" width="1600" height="780" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">かたいまま止まるか、つぶれながら止まるか</title>
+  <desc id="desc">右の壁にぶつかる箱を上下2段で比べた図。上段は先端がかたいままの箱で、壁に当たってすぐ止まり、止まるまでの距離はごく短く、体には太く短い矢印で示す大きな力が一度にかかる。下段は先端に赤いつぶれる部分がある箱で、ぶつかった瞬間の位置（点線）から先端がくしゃっと縮みながら進んで止まり、止まるまでの距離が長い。体にかかる力は細く長い矢印で示し、小さな力が長い時間に分かれることを表す。数字は書いていない。</desc>
+  <!--
+    影・filter 不使用。架空の模式図。左から右へ進んで右端の壁に当たる。
+    比べる量：箱（ドライバーのいる部分）の先端が、ぶつかってから止まるまでに進む距離
+      上段  ブラケット x=1416〜1440（ごく短い）
+      下段  ぶつかった瞬間の箱の先端 x=1240 → 止まったときの箱の先端 x=1390。ブラケット x=1240〜1390（長い）
+    力の矢印（太さ＝力の大きさ、長さ＝力が続く時間）
+      上段  太さ24・先端x=112〜尾x=260
+      下段  太さ6 ・先端x=112〜尾x=520
+    文字の右端（概算：字数×font-size）
+      見出し 20字×42=840 → 928 ／ 説明文 43字×24=1032 → 1120
+      上段  つぶれない場合 7字×30 → 322 ／ すぐに止まる 6字×28 → 280 ／ 大きな力が一度にかかる 11字×28 → 420
+            体にかかる力 6字×26 → 280〜436 ／ 止まるまでの距離：ごく短い 13字×28=364 → 1036〜1400（右寄せ）
+      下段  つぶれる場合 6字×30 → 292 ／ 少しずつ止まる 7字×28 → 308 ／ 力は小さく、長い時間に分かれる 15字×28 → 532
+            体にかかる力 → 540〜696 ／ ぶつかった瞬間 7字×28=196 → 729〜925（右寄せ）
+            止まったとき 6字×28=168 → 907〜1075（右寄せ） ／ 止まるまでの距離：長い 11字×28=308 → 917〜1225（右寄せ）
+  -->
+  <defs>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="14" height="14" fill="#CFCCC5"/>
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#8F9299" stroke-width="5"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1600" height="780" fill="#F6F5F2"/>
+
+  <!-- 見出し -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">かたいまま止まるか、つぶれながら止まるか</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">右の壁にぶつかったときの比べ図です。矢印の太さは力の大きさ、長さは力が続く時間を表します。</text>
+
+  <!-- ================= 上段：つぶれない場合 ================= -->
+  <rect x="88" y="180" width="1424" height="210" rx="6" fill="#FFFFFF" stroke="#A9A6A0" stroke-width="2"/>
+  <text x="112" y="226" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">つぶれない場合</text>
+  <text x="112" y="276" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="400" fill="#191B1F">すぐに止まる</text>
+  <text x="112" y="316" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#D4342A">大きな力が一度にかかる</text>
+  <!-- 太く短い矢印 -->
+  <rect x="160" y="346" width="100" height="24" fill="#D4342A"/>
+  <path d="M 112,358 L 164,334 L 164,382 Z" fill="#D4342A"/>
+  <text x="280" y="367" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="400" fill="#5A5D64">体にかかる力</text>
+
+  <!-- 壁 -->
+  <text x="1460" y="214" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#5A5D64">壁</text>
+  <rect x="1440" y="230" width="40" height="145" fill="url(#hatch)" stroke="#5A5D64" stroke-width="2.5"/>
+
+  <!-- かたい箱（ドライバー入り） -->
+  <circle cx="1290" cy="250" r="20" fill="#CFCCC5" stroke="#191B1F" stroke-width="2.5"/>
+  <rect x="1140" y="250" width="300" height="70" fill="#3A3B40" stroke="#191B1F" stroke-width="3"/>
+
+  <!-- 止まるまでの距離（ごく短い） -->
+  <line x1="1416" y1="345" x2="1440" y2="345" stroke="#191B1F" stroke-width="3"/>
+  <line x1="1416" y1="333" x2="1416" y2="357" stroke="#191B1F" stroke-width="3"/>
+  <line x1="1440" y1="333" x2="1440" y2="357" stroke="#191B1F" stroke-width="3"/>
+  <text x="1400" y="356" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">止まるまでの距離：ごく短い</text>
+
+  <!-- ================= 下段：つぶれる場合 ================= -->
+  <rect x="88" y="405" width="1424" height="295" rx="6" fill="#FFFFFF" stroke="#A9A6A0" stroke-width="2"/>
+  <text x="112" y="451" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">つぶれる場合</text>
+  <text x="112" y="501" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="400" fill="#191B1F">少しずつ止まる</text>
+  <text x="112" y="541" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#D4342A">力は小さく、長い時間に分かれる</text>
+  <!-- 細く長い矢印 -->
+  <rect x="136" y="597" width="384" height="6" fill="#D4342A"/>
+  <path d="M 112,600 L 142,586 L 142,614 Z" fill="#D4342A"/>
+  <text x="540" y="609" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="400" fill="#5A5D64">体にかかる力</text>
+
+  <!-- 壁 -->
+  <text x="1460" y="439" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#5A5D64">壁</text>
+  <rect x="1440" y="455" width="40" height="230" fill="url(#hatch)" stroke="#5A5D64" stroke-width="2.5"/>
+
+  <!-- 位置合わせの補助線（箱の後ろに隠れる） -->
+  <line x1="1240" y1="522" x2="1240" y2="672" stroke="#5A5D64" stroke-width="2" stroke-dasharray="6 6"/>
+  <line x1="1390" y1="635" x2="1390" y2="672" stroke="#5A5D64" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- ぶつかった瞬間（点線） -->
+  <path d="M 1074,462 A 16 16 0 0 1 1106,462" fill="none" stroke="#8F9299" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <rect x="940" y="462" width="300" height="60" fill="#F6F5F2" stroke="#8F9299" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <path d="M 1240,468 L 1440,480 L 1440,504 L 1240,516 Z" fill="#D4342A" fill-opacity="0.15" stroke="#D4342A" stroke-width="2.5" stroke-dasharray="8 6" stroke-linejoin="round"/>
+  <text x="925" y="500" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#5A5D64">ぶつかった瞬間</text>
+
+  <!-- 止まったとき（先端がくしゃっと縮む） -->
+  <circle cx="1240" cy="575" r="20" fill="#CFCCC5" stroke="#191B1F" stroke-width="2.5"/>
+  <rect x="1090" y="575" width="300" height="60" fill="#3A3B40" stroke="#191B1F" stroke-width="3"/>
+  <path d="M 1390,580 L 1402,572 L 1414,584 L 1426,574 L 1440,586 L 1440,624 L 1426,636 L 1414,626 L 1402,638 L 1390,630 Z" fill="#D4342A" stroke="#191B1F" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="1402" y1="575" x2="1402" y2="635" stroke="#8E1F18" stroke-width="2"/>
+  <line x1="1414" y1="586" x2="1414" y2="624" stroke="#8E1F18" stroke-width="2"/>
+  <line x1="1426" y1="577" x2="1426" y2="633" stroke="#8E1F18" stroke-width="2"/>
+  <text x="1075" y="614" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">止まったとき</text>
+
+  <!-- 止まるまでの距離（長い） -->
+  <line x1="1240" y1="660" x2="1390" y2="660" stroke="#191B1F" stroke-width="3"/>
+  <line x1="1240" y1="648" x2="1240" y2="672" stroke="#191B1F" stroke-width="3"/>
+  <line x1="1390" y1="648" x2="1390" y2="672" stroke="#191B1F" stroke-width="3"/>
+  <text x="1225" y="671" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">止まるまでの距離：長い</text>
+
+  <!-- フッタ -->
+  <text x="88" y="748" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第8回「く」　クラッシャブルストラクチャー</text>
+  <text x="1512" y="748" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">※ 架空の模式図です。長さや矢印の大きさは、実際の値を表していません。</text>
+</svg>

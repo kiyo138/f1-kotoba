@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" width="1600" height="800" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">衝撃をうけとめる場所</title>
+  <desc id="desc">マシンを真上から見た簡略図。前のノーズ、運転席の左右、ギアボックスの後ろの3か所が赤く塗られ、ぶつかったときにつぶれて衝撃を吸う部分であることを示す。中央の濃いグレーの部分はドライバーが座るサバイバルセルで、つぶれずに形を保つ。数字は書いていない。</desc>
+  <!--
+    影・filter 不使用。架空・無地の簡略マシン（実在車に似せない）。左が前。
+    色の役割
+      #D4342A  つぶれて衝撃を吸う部分（ノーズ／左右の側面構造／後部構造）
+      #3A3B40  形を保ってドライバーを守る部分（サバイバルセル）
+      #A9A6A0 #CFCCC5 #8F9299  そのほかの部品（ウイング・サイドポッド・エンジンまわり・タイヤ）
+    主な部位の座標
+      ノーズ          M 292,437 L 470,418 L 470,482 L 292,463 Q 276,450 292,437 Z
+      サバイバルセル  M 470,418 L 560,392 L 820,388 L 820,512 L 560,508 L 470,482 Z
+      横（上側）      rect x=650..730 y=346..392
+      横（下側）      rect x=650..730 y=508..554
+      ギアボックス    rect x=1080..1150 y=425..475
+      後ろ            M 1150,428 L 1260,436 L 1260,464 L 1150,472 Z
+    引き出し線（始点 → 先端）と先端が落ちる部位
+      前：ノーズ          (246,252) → (380,450)  x=380 でノーズは y≒427.6〜472.4。内側
+      横：運転席の左右    (690,274) → (690,370)  上側の横の部材 y=346〜392 の内側
+      横：反対側も同じ    (690,618) → (690,530)  下側の横の部材 y=508〜554 の内側
+      後ろ                (1235,274) → (1235,450) x=1235 で後部構造は y≒434.2〜465.8。内側
+      サバイバルセル      (600,618) → (600,470)  x=600 でセルは y≒391.4〜508.6。内側
+      ギアボックス        (1115,618) → (1115,450) ギアボックス y=425〜475 の内側
+    文字の右端（概算：字数×font-size）
+      見出し 10字×42=420 → 508 ／ 説明文 41字×24=984 → 1072
+      前：ノーズ 5字×30 → 88〜238 ／ 横：運転席の左右 8字×30 → 570〜810
+      後ろ：ギアボックスの後ろ 12字×30=360 → 1152〜1512（右寄せ）
+      サバイバルセル（つぶれない殻） 15字×28=420 → 220〜640（右寄せ）
+      横：反対側も同じ 8字×28=224 → 670〜894 ／ ギアボックス（変速機） 11字×26=286 → 972〜1258（中央）
+  -->
+  <rect x="0" y="0" width="1600" height="800" fill="#F6F5F2"/>
+
+  <!-- 見出し -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">衝撃をうけとめる場所</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">マシンを真上から見た簡略図です（左が前）。赤い部分が、ぶつかったときにつぶれます。</text>
+
+  <!-- ===== マシン（真上から） ===== -->
+  <!-- サスペンションアーム -->
+  <line x1="375" y1="365" x2="470" y2="420" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="410" y1="365" x2="520" y2="405" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="375" y1="535" x2="470" y2="480" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="410" y1="535" x2="520" y2="495" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1020" y1="365" x2="1000" y2="413" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1060" y1="365" x2="1080" y2="425" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1020" y1="535" x2="1000" y2="487" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1060" y1="535" x2="1080" y2="475" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- タイヤ -->
+  <rect x="345" y="305" width="90" height="60" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+  <rect x="345" y="535" width="90" height="60" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+  <rect x="990" y="301" width="100" height="64" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+  <rect x="990" y="535" width="100" height="64" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+
+  <!-- フロントウイング -->
+  <rect x="250" y="350" width="40" height="200" rx="5" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5"/>
+
+  <!-- サイドポッド -->
+  <path d="M 650,391 L 650,346 L 900,346 C 950,350 985,370 1005,414 L 820,388 Z" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 650,509 L 650,554 L 900,554 C 950,550 985,530 1005,486 L 820,512 Z" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- エンジンまわり・ギアボックス -->
+  <path d="M 820,388 L 1080,425 L 1080,475 L 820,512 Z" fill="#A9A6A0" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="1080" y="425" width="70" height="50" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5"/>
+
+  <!-- リアウイング（後部構造の上に重なるため薄く描く） -->
+  <rect x="1190" y="360" width="35" height="180" rx="4" fill="#CFCCC5" fill-opacity="0.6" stroke="#5A5D64" stroke-width="2.5" stroke-dasharray="8 6"/>
+
+  <!-- サバイバルセル（形を保つ） -->
+  <path d="M 470,418 L 560,392 L 820,388 L 820,512 L 560,508 L 470,482 Z" fill="#3A3B40" stroke="#191B1F" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="700" cy="450" rx="62" ry="34" fill="#191B1F"/>
+  <circle cx="690" cy="450" r="22" fill="#CFCCC5" stroke="#F6F5F2" stroke-width="2"/>
+
+  <!-- つぶれる部分（赤） -->
+  <path d="M 292,437 L 470,418 L 470,482 L 292,463 Q 276,450 292,437 Z" fill="#D4342A" stroke="#191B1F" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="650" y="346" width="80" height="46" fill="#D4342A" stroke="#191B1F" stroke-width="3"/>
+  <rect x="650" y="508" width="80" height="46" fill="#D4342A" stroke="#191B1F" stroke-width="3"/>
+  <path d="M 1150,428 L 1260,436 L 1260,464 L 1150,472 Z" fill="#D4342A" stroke="#191B1F" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- ===== 引き出し線（白い縁取り → 黒線 → 先端の点） ===== -->
+  <!-- 前：ノーズ -->
+  <line x1="246" y1="252" x2="380" y2="450" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="246" y1="252" x2="380" y2="450" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="380" cy="450" r="5" fill="#191B1F" stroke="#F6F5F2" stroke-width="2"/>
+  <text x="88" y="262" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">前：ノーズ</text>
+
+  <!-- 横：運転席の左右（上側） -->
+  <line x1="690" y1="274" x2="690" y2="370" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="690" y1="274" x2="690" y2="370" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="690" cy="370" r="5" fill="#191B1F" stroke="#F6F5F2" stroke-width="2"/>
+  <text x="570" y="262" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">横：運転席の左右</text>
+
+  <!-- 後ろ：ギアボックスの後ろ -->
+  <line x1="1235" y1="274" x2="1235" y2="450" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="1235" y1="274" x2="1235" y2="450" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="1235" cy="450" r="5" fill="#191B1F" stroke="#F6F5F2" stroke-width="2"/>
+  <text x="1512" y="262" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">後ろ：ギアボックスの後ろ</text>
+
+  <!-- サバイバルセル -->
+  <line x1="600" y1="618" x2="600" y2="470" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="600" y1="618" x2="600" y2="470" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="600" cy="470" r="5" fill="#191B1F" stroke="#F6F5F2" stroke-width="2"/>
+  <text x="640" y="652" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">サバイバルセル（つぶれない殻）</text>
+
+  <!-- 横（下側） -->
+  <line x1="690" y1="618" x2="690" y2="530" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="690" y1="618" x2="690" y2="530" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="690" cy="530" r="5" fill="#191B1F" stroke="#F6F5F2" stroke-width="2"/>
+  <text x="670" y="652" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">横：反対側も同じ</text>
+
+  <!-- ギアボックス（目印として補助色） -->
+  <line x1="1115" y1="618" x2="1115" y2="450" stroke="#F6F5F2" stroke-width="7" stroke-linecap="round"/>
+  <line x1="1115" y1="618" x2="1115" y2="450" stroke="#5A5D64" stroke-width="2.5"/>
+  <circle cx="1115" cy="450" r="5" fill="#5A5D64" stroke="#F6F5F2" stroke-width="2"/>
+  <text x="1115" y="652" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="26" font-weight="700" fill="#5A5D64">ギアボックス（変速機）</text>
+
+  <!-- ===== 凡例 ===== -->
+  <rect x="88" y="690" width="48" height="30" rx="3" fill="#D4342A" stroke="#191B1F" stroke-width="2.5"/>
+  <text x="150" y="715" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="400" fill="#191B1F">つぶれて衝撃を吸う部分</text>
+  <rect x="520" y="690" width="48" height="30" rx="3" fill="#3A3B40" stroke="#191B1F" stroke-width="2.5"/>
+  <text x="582" y="715" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="400" fill="#191B1F">形を保ってドライバーを守る部分</text>
+
+  <!-- フッタ -->
+  <text x="88" y="768" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第8回「く」　クラッシャブルストラクチャー</text>
+  <text x="1512" y="768" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="18" font-weight="400" fill="#5A5D64">※ 架空の模式図です。部品の形や大きさは実際とは異なります。</text>
+</svg>
