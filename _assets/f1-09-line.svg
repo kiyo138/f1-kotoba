@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" width="1600" height="780" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">コーナーを曲がる走行ライン（アウト・イン・アウト）</title>
+  <desc id="desc">架空の右コーナーを上から見た図。マシンは道幅の外側から入り、内側の縁石にいちばん近づく点（クリッピングポイント）を通り、また外側へ出ていく。入口、クリッピングポイント、出口の3か所に番号を付けている。</desc>
+  <!-- 影・filter 不使用。架空・無地の汎用コーナー（実在コースに似せない）。 -->
+  <defs>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#D4342A"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1600" height="780" fill="#F6F5F2"/>
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F" >外から入り、内に近づき、外へ出る</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64" >架空の右コーナーを上から見た図です。赤い線がマシンの走行ライン、赤白の帯が内側の縁石。</text>
+  <rect x="88" y="190" width="1424" height="514" rx="6" fill="#FFFFFF" stroke="#A9A6A0" stroke-width="2"/>
+  <path d="M 110,300 H 520 A 180 180 0 0 1 700,480 V 700" fill="none" stroke="#8F9299" stroke-width="156"/>
+  <path d="M 110,300 H 520 A 180 180 0 0 1 700,480 V 700" fill="none" stroke="#E6E3DC" stroke-width="150"/>
+  <path d="M 520,370 A 110 110 0 0 1 630,480" fill="none" stroke="#D4342A" stroke-width="10"/>
+  <path d="M 520,370 A 110 110 0 0 1 630,480" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-dasharray="12 12"/>
+  <path d="M 110,250 C 360,250 514,316 602,398 C 686,486 760,560 760,682" fill="none" stroke="#F6F5F2" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 110,250 C 360,250 514,316 602,398 C 686,486 760,560 760,682" fill="none" stroke="#D4342A" stroke-width="5" marker-end="url(#arrowRed)"/>
+  <circle cx="200" cy="250" r="18" fill="#FFFFFF" stroke="#191B1F" stroke-width="3"/>
+  <text x="200" y="258" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F" text-anchor="middle">1</text>
+  <circle cx="602" cy="398" r="18" fill="#FFFFFF" stroke="#191B1F" stroke-width="3"/>
+  <text x="602" y="406" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F" text-anchor="middle">2</text>
+  <circle cx="760" cy="620" r="18" fill="#FFFFFF" stroke="#191B1F" stroke-width="3"/>
+  <text x="760" y="628" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F" text-anchor="middle">3</text>
+  <text x="880" y="262" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#D4342A" >アウト・イン・アウト</text>
+  <text x="880" y="300" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64" >道幅の外側から入り、内側に近づき、また外側へ。</text>
+  <circle cx="900" cy="380" r="18" fill="#FFFFFF" stroke="#191B1F" stroke-width="3"/>
+  <text x="900" y="388" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F" text-anchor="middle">1</text>
+  <text x="938" y="378" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F" >入口</text>
+  <text x="938" y="414" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64" >道幅の外側から入っていく</text>
+  <circle cx="900" cy="480" r="18" fill="#FFFFFF" stroke="#191B1F" stroke-width="3"/>
+  <text x="900" y="488" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F" text-anchor="middle">2</text>
+  <text x="938" y="478" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F" >クリッピングポイント</text>
+  <text x="938" y="514" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64" >内側の縁石にいちばん近づく点</text>
+  <circle cx="900" cy="580" r="18" fill="#FFFFFF" stroke="#191B1F" stroke-width="3"/>
+  <text x="900" y="588" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#191B1F" text-anchor="middle">3</text>
+  <text x="938" y="578" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F" >出口</text>
+  <text x="938" y="614" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64" >また外側へ出て、直線へ向かう</text>
+  <text x="88" y="748" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64" >F1のことば、あいうえお ／ 第9回「く」　クリッピングポイント</text>
+  <text x="1512" y="748" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64" text-anchor="end">※ 架空の模式図です。縁石は大きめに描いています。</text>
+</svg>
