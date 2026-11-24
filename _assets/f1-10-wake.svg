@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 740" width="1600" height="740" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">前の車の後ろは、空気が乱れる</title>
+  <desc id="desc">直線を走る2台のマシンを真上から見た模式図。左が進む向き。前の車の前方には、まっすぐな線で表した乱れていない空気（クリーンエア）がある。前の車の後ろには、渦巻きと波線で表した乱れた空気（ダーティーエア）が広がり、後ろの車はその中を走っている。</desc>
+  <!--
+    週刊F1用語コラム「F1のことば、あいうえお」第10回 解説図1（wake） 1600 x 740
+    影・filter 不使用。架空・無地の簡略マシン（実在車に似せない）。左が前（第8回 map と同じ向き）。
+
+    ■ マシンの流用元
+      f1-08-map.svg の「真上から見たマシン」をそのまま defs に移した。造形・座標は変えていない。
+      変えたのは色だけ：第8回で赤だった「つぶれる部分」を通常の部品色に戻した
+        ノーズ → #3A3B40（サバイバルセルと同色）、後部構造 → #A9A6A0、
+        横の衝撃吸収材 → 描かない（サイドポッドが同じ範囲を覆う）、
+        リアウイング → 点線・半透明をやめて実線にした。
+      原図の中心 (755,450)・全長1010（x=250〜1260）・全幅298（y=301〜599）。
+      使用時： translate(中心) scale(0.34) translate(-755,-450)
+        → 全長 343.4 ／ 全幅 101.3
+      前の車  中心 (592,410) → x=420.3〜763.7, y=359.3〜460.7
+      後ろの車 中心 (1252,410) → x=1080.3〜1423.7
+
+    ■ 色の役割
+      #5A5D64 まっすぐな線 … 乱れていない空気（クリーンエア）
+      #D4342A 渦巻き・波線 … 乱れた空気（ダーティエア）。範囲を薄い赤で塗る
+      色だけに頼らないため、線の形（直線／渦・波）と文字ラベルで区別する。
+
+    ■ 引き出し線（始点 → 先端）と先端が落ちる対象
+      クリーンエア (220,282) → (220,385)  直線 y=385（x=130〜400）の上
+      前の車       (540,288) → (540,410)  原図換算 x=755+(540-592)/0.34=602.1, y=450
+                                          → サバイバルセル（x=470〜820、x=600で y≒391〜509）の内側
+      後ろの車     (1200,288) → (1200,410) 同上の換算で x=602.1, y=450 → セルの内側
+      ダーティエア (930,546) → (959,448)  渦 (975,442) の描き始め点 (-16,6) → (959,448) の上
+
+    ■ 乱れた空気の範囲（上下対称、中心 y=410）
+      上端 M 765,378 C 900,360 1100,330 1490,318 ／ 下端はその鏡像
+      t=0.5 で (1032, 345.8)。波線 y=366±7 は x=1060 以降で範囲内（上端≒344）。
+
+    ■ 文字の横幅（和字1字=font-size と見積もる）
+      見出し 14字×42=588 → 88〜676
+      説明文 39字×24=936 → 88〜1024
+      クリーンエア 6字×30=180 → 130〜310 ／ 乱れていない空気 8×22=176 → 130〜306
+      前の車 3×28=84 → 498〜582 ／ 後ろの車 4×28=112 → 1144〜1256
+      ダーティエア 6×30=180 → 800〜980 ／ 前の車が残した乱れた空気 12×22=264 → 800〜1064
+      進む向き 4×24=96 → 345〜441
+  -->
+  <defs>
+    <marker id="arrowInk" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#191B1F"/>
+    </marker>
+
+    <!-- 渦巻き1つ（原点中心、およそ x=-16〜14, y=-10〜10） -->
+    <path id="curl" d="M -16,6 C -16,-12 14,-14 14,0 C 14,10 0,12 -2,4 C -3,-1 4,-3 5,1"
+          fill="none" stroke="#D4342A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 真上から見たマシン（f1-08-map.svg の造形を流用。左が前） -->
+    <g id="carTop">
+      <line x1="375" y1="365" x2="470" y2="420" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="410" y1="365" x2="520" y2="405" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="375" y1="535" x2="470" y2="480" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="410" y1="535" x2="520" y2="495" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="1020" y1="365" x2="1000" y2="413" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="1060" y1="365" x2="1080" y2="425" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="1020" y1="535" x2="1000" y2="487" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <line x1="1060" y1="535" x2="1080" y2="475" stroke="#5A5D64" stroke-width="5" stroke-linecap="round"/>
+      <rect x="345" y="305" width="90" height="60" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+      <rect x="345" y="535" width="90" height="60" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+      <rect x="990" y="301" width="100" height="64" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+      <rect x="990" y="535" width="100" height="64" rx="10" fill="#8F9299" stroke="#191B1F" stroke-width="3"/>
+      <rect x="250" y="350" width="40" height="200" rx="5" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5"/>
+      <path d="M 650,391 L 650,346 L 900,346 C 950,350 985,370 1005,414 L 820,388 Z" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M 650,509 L 650,554 L 900,554 C 950,550 985,530 1005,486 L 820,512 Z" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M 820,388 L 1080,425 L 1080,475 L 820,512 Z" fill="#A9A6A0" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="1080" y="425" width="70" height="50" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5"/>
+      <path d="M 1150,428 L 1260,436 L 1260,464 L 1150,472 Z" fill="#A9A6A0" stroke="#5A5D64" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="1190" y="360" width="35" height="180" rx="4" fill="#CFCCC5" stroke="#5A5D64" stroke-width="2.5"/>
+      <path d="M 470,418 L 560,392 L 820,388 L 820,512 L 560,508 L 470,482 Z" fill="#3A3B40" stroke="#191B1F" stroke-width="3" stroke-linejoin="round"/>
+      <ellipse cx="700" cy="450" rx="62" ry="34" fill="#191B1F"/>
+      <circle cx="690" cy="450" r="22" fill="#CFCCC5" stroke="#F6F5F2" stroke-width="2"/>
+      <path d="M 292,437 L 470,418 L 470,482 L 292,463 Q 276,450 292,437 Z" fill="#3A3B40" stroke="#191B1F" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="740" fill="#F6F5F2"/>
+
+  <!-- 見出し -->
+  <text x="88" y="88" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="42" font-weight="700" fill="#191B1F">前の車の後ろは、空気が乱れる</text>
+  <line x1="88" y1="118" x2="248" y2="118" stroke="#D4342A" stroke-width="5"/>
+  <text x="88" y="158" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="400" fill="#5A5D64">直線を走る2台を真上から見た図です（左が進む向き）。線は空気の流れを表します。</text>
+
+  <!-- 図の枠 -->
+  <rect x="88" y="190" width="1424" height="460" rx="6" fill="#FFFFFF" stroke="#A9A6A0" stroke-width="2"/>
+
+  <!-- 直線の路面 -->
+  <rect x="110" y="300" width="1380" height="220" fill="#E6E3DC"/>
+  <line x1="110" y1="300" x2="1490" y2="300" stroke="#8F9299" stroke-width="3"/>
+  <line x1="110" y1="520" x2="1490" y2="520" stroke="#8F9299" stroke-width="3"/>
+
+  <!-- ===== クリーンエア：前の車の前方、まっすぐな流れ ===== -->
+  <g stroke="#5A5D64" stroke-width="3" stroke-linecap="round">
+    <line x1="130" y1="360" x2="400" y2="360"/>
+    <line x1="130" y1="385" x2="400" y2="385"/>
+    <line x1="130" y1="410" x2="400" y2="410"/>
+    <line x1="130" y1="435" x2="400" y2="435"/>
+    <line x1="130" y1="460" x2="400" y2="460"/>
+  </g>
+
+  <!-- ===== ダーティエア：前の車の後ろに広がる乱れた空気 ===== -->
+  <path d="M 765,378 C 900,360 1100,330 1490,318 L 1490,502 C 1100,490 900,460 765,442 Z" fill="#D4342A" fill-opacity="0.08"/>
+  <!-- 波線（後ろの車のまわりと、その後ろ） -->
+  <g fill="none" stroke="#D4342A" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8">
+    <path d="M 1060,366 q 10,-7 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0"/>
+    <path d="M 1060,410 q 10,-7 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0"/>
+    <path d="M 1060,454 q 10,-7 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0 t 20,0"/>
+  </g>
+  <!-- 渦巻き（2台のあいだ） -->
+  <use href="#curl" xlink:href="#curl" transform="translate(800,410)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(850,386)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(862,436)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(920,410)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(965,378)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(975,442)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(1030,404)"/>
+  <use href="#curl" xlink:href="#curl" transform="translate(1046,454)"/>
+
+  <!-- ===== マシン 2台 ===== -->
+  <use href="#carTop" xlink:href="#carTop" transform="translate(592,410) scale(0.34) translate(-755,-450)"/>
+  <use href="#carTop" xlink:href="#carTop" transform="translate(1252,410) scale(0.34) translate(-755,-450)"/>
+
+  <!-- ===== 引き出し線（白い縁取り → 黒線 → 先端の点） ===== -->
+  <!-- クリーンエア -->
+  <line x1="220" y1="282" x2="220" y2="385" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="220" y1="282" x2="220" y2="385" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="220" cy="385" r="5" fill="#191B1F" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="130" y="236" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#191B1F">クリーンエア</text>
+  <text x="130" y="268" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">乱れていない空気</text>
+
+  <!-- 前の車 -->
+  <line x1="540" y1="288" x2="540" y2="410" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="540" y1="288" x2="540" y2="410" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="540" cy="410" r="5" fill="#191B1F" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="540" y="276" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">前の車</text>
+
+  <!-- 後ろの車 -->
+  <line x1="1200" y1="288" x2="1200" y2="410" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="1200" y1="288" x2="1200" y2="410" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="1200" cy="410" r="5" fill="#191B1F" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="1200" y="276" text-anchor="middle" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="28" font-weight="700" fill="#191B1F">後ろの車</text>
+
+  <!-- ダーティエア -->
+  <line x1="930" y1="546" x2="959" y2="448" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="930" y1="546" x2="959" y2="448" stroke="#191B1F" stroke-width="2.5"/>
+  <circle cx="959" cy="448" r="5" fill="#191B1F" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="800" y="580" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="30" font-weight="700" fill="#D4342A">ダーティーエア</text>
+  <text x="800" y="614" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">前の車が残した乱れた空気</text>
+
+  <!-- 進む向き -->
+  <line x1="330" y1="590" x2="134" y2="590" stroke="#191B1F" stroke-width="4" marker-end="url(#arrowInk)"/>
+  <text x="345" y="598" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="24" font-weight="700" fill="#5A5D64">進む向き</text>
+
+  <!-- フッタ -->
+  <text x="88" y="708" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="22" font-weight="400" fill="#5A5D64">F1のことば、あいうえお ／ 第10回「く」　クリーンエア</text>
+  <text x="1512" y="708" text-anchor="end" font-family="'Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="400" fill="#5A5D64">※ 架空の模式図です。空気の流れは単純にしてあります。</text>
+</svg>
